@@ -1,4 +1,4 @@
-# **Task #13: Investigate PowerShell Command Execution Logs**
+# **Task #3: Investigate PowerShell Command Execution Logs**
 
 ## **Objective**  
 The objective of this task is to help students analyze **PowerShell execution logs** to detect potential malicious activity. By completing this task, students will learn how to capture **PowerShell command execution events**, detect suspicious script execution, and analyze logs using **Windows Event Viewer and PowerShell**.
