@@ -1,4 +1,4 @@
-# **Task #7: Identify Malicious IPs from a PCAP File**
+# **Task #2: Identify Malicious IPs from a PCAP File**
 
 ## **Objective**  
 The objective of this task is to introduce students to **analyzing packet capture (PCAP) files** in Wireshark. Students will learn how to **identify suspicious IP addresses**, extract network metadata, and correlate findings with threat intelligence sources.
