@@ -87,10 +87,10 @@ Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" | Where-Object 
 - If results appear, it suggests a PowerShell command attempted to fetch and execute remote scripts.
 
 ## Conclusion
-✅ Successfully simulated a suspicious PowerShell command execution.
-✅ Detected and analyzed PowerShell script execution logs using Event Viewer and Sysmon.
-✅ Identified remote code execution attempts, a common technique used by malware and attackers.
-✅ Learned how SOC analysts track PowerShell-based attacks and prevent execution of malicious scripts.
+✅ Successfully simulated a suspicious PowerShell command execution.    
+✅ Detected and analyzed PowerShell script execution logs using Event Viewer and Sysmon.     
+✅ Identified remote code execution attempts, a common technique used by malware and attackers.    
+✅ Learned how SOC analysts track PowerShell-based attacks and prevent execution of malicious scripts.    
 
 ## Submission
 Share a screenshot of Sysmon or PowerShell logs showing script execution (Event ID 4104 or Event ID 1).
