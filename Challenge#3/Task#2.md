@@ -1,4 +1,4 @@
-# **Task #12: Analyze Windows Registry Changes After a Malware Infection**
+# **Task #2: Analyze Windows Registry Changes After a Malware Infection**
 
 ## **Objective**  
 The objective of this task is to help students analyze **Windows Registry modifications** that occur during a malware infection. Students will simulate **registry changes**, detect unauthorized modifications, and use **Sysmon logs** to investigate suspicious registry activity.
