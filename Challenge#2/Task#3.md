@@ -1,4 +1,4 @@
-# **Task #8: Analyze DNS Queries for Suspicious Activity**
+# **Task #3: Analyze DNS Queries for Suspicious Activity**
 
 ## **Objective**  
 The objective of this task is to help students analyze **DNS traffic** to detect suspicious or malicious domain resolution attempts. By completing this task, students will learn how to capture **DNS queries**, identify abnormal domain lookups, and correlate them with threat intelligence.
