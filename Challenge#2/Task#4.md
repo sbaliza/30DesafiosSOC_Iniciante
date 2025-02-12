@@ -66,9 +66,9 @@ tls
 - Communication with a known malware C2 server.
 
 ## Conclusion
-✅ Successfully captured and analyzed HTTP and HTTPS traffic using Wireshark.
-✅ Identified cleartext credentials, suspicious domains, and abnormal HTTPS traffic.
-✅ Understood how SOC analysts detect web-based attacks and data exfiltration.
+✅ Successfully captured and analyzed HTTP and HTTPS traffic using Wireshark.   
+✅ Identified cleartext credentials, suspicious domains, and abnormal HTTPS traffic.   
+✅ Understood how SOC analysts detect web-based attacks and data exfiltration.   
 
 ## Submission
 - Share a screenshot of Wireshark showing HTTP or HTTPS anomalies.
