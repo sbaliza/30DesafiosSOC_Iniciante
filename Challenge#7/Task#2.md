@@ -1,4 +1,4 @@
-# **Task #30: Acquiring a Windows Forensic Image Using FTK Imager**
+# **Task #2: Acquiring a Windows Forensic Image Using FTK Imager**
 
 ## **Objective**  
 The objective of this task is to help students **acquire a forensic image of a Windows machine using FTK Imager**. By completing this task, students will learn how to **create a bit-by-bit forensic image** while preserving data integrity for further analysis.
@@ -64,14 +64,16 @@ The objective of this task is to help students **acquire a forensic image of a W
 2. Run the following command in Windows Command Prompt (if needed for verification):  
    ```powershell
    certutil -hashfile "C:\path\to\image.E01" MD5
-Ensure the hash matches to confirm the image is forensically sound.
-Conclusion
-✅ Successfully created a forensic image of a Windows machine using FTK Imager.
-✅ Ensured data integrity using hashing methods.
-✅ Stored the forensic image securely for further analysis using tools like Autopsy, Volatility, or EnCase.
-✅ Learned how digital forensics analysts perform forensic acquisitions for investigations.
+   ```
+3. Ensure the hash matches to confirm the image is forensically sound.
 
-Submission
-Share a screenshot of FTK Imager showing the completed forensic image creation.
-Share a screenshot of the hash verification result.
-Write a short observation on how forensic imaging ensures evidence integrity and supports incident response investigations.
+## Conclusion
+✅ Successfully created a forensic image of a Windows machine using FTK Imager.   
+✅ Ensured data integrity using hashing methods.   
+✅ Stored the forensic image securely for further analysis using tools like Autopsy, Volatility, or EnCase.   
+✅ Learned how digital forensics analysts perform forensic acquisitions for investigations.    
+
+## Submission
+- Share a screenshot of FTK Imager showing the completed forensic image creation.
+- Share a screenshot of the hash verification result.
+- Write a short observation on how forensic imaging ensures evidence integrity and supports incident response investigations.
