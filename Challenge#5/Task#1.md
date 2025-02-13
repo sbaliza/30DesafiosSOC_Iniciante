@@ -68,10 +68,10 @@ oletools olevba <file-name>
 
 
 ## Conclusion
-✅ Successfully analyzed a phishing email for IOCs.
-✅ Investigated email headers, URLs, and attachments.
-✅ Used threat intelligence tools to verify email authenticity.
-✅ Learned how SOC analysts detect phishing threats and protect users.
+✅ Successfully analyzed a phishing email for IOCs.    
+✅ Investigated email headers, URLs, and attachments.    
+✅ Used threat intelligence tools to verify email authenticity.    
+✅ Learned how SOC analysts detect phishing threats and protect users.    
 
 ## Submission
 - Share a screenshot of your email header analysis tool results.
