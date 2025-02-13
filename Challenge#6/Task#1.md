@@ -1,4 +1,4 @@
-# **Task #26: Setting up Wazuh Server (Quick Start) and Onboarding an Ubuntu Machine**
+# **Task #1: Setting up Wazuh Server (Quick Start) and Onboarding an Ubuntu Machine**
 
 ## **Objective**  
 The objective of this task is to help students **set up a Wazuh Server using the Quick Start method** and **onboard an Ubuntu machine as an agent**. By completing this task, students will learn how to deploy **Wazuh for security monitoring, log analysis, and threat detection**.
