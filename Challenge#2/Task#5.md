@@ -1,4 +1,4 @@
-# **Task #11: Identify Suspicious Processes Using Task Manager and Sysmon**
+# **Task #5: Identify Suspicious Processes Using Task Manager and Sysmon**
 
 ## **Objective**  
 The objective of this task is to help students detect **suspicious processes** running on a Windows system by using **Task Manager** and **Sysmon (System Monitor)**. Students will simulate a **malicious process execution**, capture process creation events, and analyze logs to identify potential threats.
