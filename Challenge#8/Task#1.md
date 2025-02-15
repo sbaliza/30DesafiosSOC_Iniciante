@@ -1,4 +1,4 @@
-# **Task #32: Analyze Apache Logs for Suspicious Access Attempts Using Splunk**  
+# **Task #1: Analyze Apache Logs for Suspicious Access Attempts Using Splunk**  
 
 ## **Objective**  
 The objective of this task is to help students **analyze Apache access logs in Splunk to detect suspicious access attempts**. By completing this task, students will learn how to identify **brute-force attempts, directory traversal attacks, SQL injection attempts, and unusual user agents** from web server logs.
