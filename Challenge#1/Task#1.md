@@ -58,9 +58,9 @@ Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" | Where-Object 
 - Look for the command Get-LocalUser in the output.
 
 ## Conclusion
-✅ Successfully simulated an attacker’s reconnaissance technique using PowerShell.
-✅ Detected the suspicious command execution via Windows Event Viewer and PowerShell log extraction.
-✅ Understood how SOC analysts can detect and investigate PowerShell-based attacks in real-world scenarios.
+✅ Successfully simulated an attacker’s reconnaissance technique using PowerShell.    
+✅ Detected the suspicious command execution via Windows Event Viewer and PowerShell log extraction.    
+✅ Understood how SOC analysts can detect and investigate PowerShell-based attacks in real-world scenarios.    
 
 ## Submission
 - Share a screenshot of the PowerShell command execution log (Event ID 4104).
