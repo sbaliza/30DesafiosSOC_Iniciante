@@ -11,21 +11,22 @@ The goal of this task is to introduce students to **PowerShell-based attack dete
 - **Tools:**  
   - **PowerShell (Pre-installed)**
   - **Windows Event Viewer**
-  - **Notepad or Excel (for documentation)**  
+  - **Notepad or Excel (for documentation)**
+ 
 
+## Preparation
+
+By default, Powershell logs are not enabled. We need to enable both script blok logging and module execution logs.
 ### **Enable Logging for PowerShell Execution**
-Before running the attack simulation, enable PowerShell logging:  
-
-Run the following command in **an elevated (Admin) PowerShell session**:  
-```
-Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
-```
-Then, you can enable the script block logging using this command:
-
-```
-Set-ItemProperty -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" -Name "EnableScript
-```
-This enables logging of all PowerShell script blocks executed on the system.
+1. Press `Win + R` to open the Run dialog.
+2. Type `gpedit.msc` and press Enter to open the Group Policy Editor.
+3. Navigate to the following path:
+`Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`
+4. Turn on Module Logging
+5. Turn on Powershell Script Block Logging
+6. Turn on Script Execution
+7. Turn on Powershell Transcription
+8. Apply 
 
 ## Attack Simulation & Detection Using PowerShell
 We will now simulate an attacker’s reconnaissance technique by executing a PowerShell command that retrieves local user accounts.
