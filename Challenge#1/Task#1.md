@@ -17,8 +17,13 @@ The goal of this task is to introduce students to **PowerShell-based attack dete
 Before running the attack simulation, enable PowerShell logging:  
 
 Run the following command in **an elevated (Admin) PowerShell session**:  
-```powershell
-auditpol /set /subcategory:"PowerShell Script Block Logging" /success:enable /failure:enable
+```
+Set-ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
+Then, you can enable the script block logging using this command:
+
+```
+Set-ItemProperty -Path "HKLM:\Software\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" -Name "EnableScript
 ```
 This enables logging of all PowerShell script blocks executed on the system.
 
