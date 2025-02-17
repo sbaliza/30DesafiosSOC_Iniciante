@@ -44,7 +44,7 @@ Attackers use similar commands post-exploitation to enumerate users before escal
 ```
 Applications and Services Logs → Microsoft → Windows → PowerShell → Operational
 ```
-3. Click Filter Current Log and enter Event ID 4104 (PowerShell script block logging).
+3. Click Filter Current Log and enter Event ID 4104 (Execute a Remote Command).
 4. Locate the entry showing the execution of the Get-LocalUser command.
 5. Take a screenshot of the event details.
 
