@@ -66,9 +66,9 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4625} | Group-Object -Pro
 - If you see multiple failed attempts for the same account within a short time, it might indicate brute-force activity.
 
 ## Conclusion
-✅ Successfully simulated both successful and failed login attempts.
-✅ Detected the login attempts using Windows Event Viewer and PowerShell log extraction.
-✅ Understood how SOC analysts can track brute-force attacks and suspicious login patterns.
+✅ Successfully simulated both successful and failed login attempts.   
+✅ Detected the login attempts using Windows Event Viewer and PowerShell log extraction.    
+✅ Understood how SOC analysts can track brute-force attacks and suspicious login patterns.    
 
 ## Submission
 - Share a screenshot of the login event logs (Event ID 4624 & 4625).
