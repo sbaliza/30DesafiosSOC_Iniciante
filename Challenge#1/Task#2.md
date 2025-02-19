@@ -13,13 +13,19 @@ The goal of this task is to help students analyze **Windows login events** and u
   - **Windows Event Viewer**
   - **Notepad or Excel (for documentation)**  
 
-### **Enable Security Auditing for Logins**
-To ensure login events are being recorded, verify that auditing is enabled by running the following command in **an elevated (Admin) PowerShell session**:  
-```powershell
-auditpol /set /category:"Logon/Logoff" /success:enable /failure:enable
-```
-This ensures that both successful and failed login attempts are logged.
+## Preparation
 
+By default, Powershell logs are not enabled. We need to enable both script blok logging and module execution logs.
+### **Enable Logging for PowerShell Execution**
+1. Press `Win + R` to open the Run dialog.
+2. Type `gpedit.msc` and press Enter to open the Group Policy Editor.
+3. Navigate to the following path:
+`Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`
+4. Turn on Module Logging
+5. Turn on Powershell Script Block Logging
+6. Turn on Script Execution
+7. Turn on Powershell Transcription
+8. Apply 
 ## Attack Simulation & Detection Using PowerShell
 We will now simulate both successful and failed login attempts and analyze them in Event Viewer.
 
