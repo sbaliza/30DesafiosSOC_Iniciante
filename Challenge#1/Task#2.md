@@ -3,7 +3,8 @@
 ## **Objective**
 The goal of this task is to help students analyze **Windows login events** and understand how to differentiate between **successful and failed login attempts** using **Windows Event Viewer** and **PowerShell**. By the end of this task, students will be able to detect suspicious login activities and identify possible brute-force attempts.
 
----
+## **Video Tutorial**
+[![YouTube](http://i.ytimg.com/vi/aaAvlNgF2AU/hqdefault.jpg)](https://www.youtube.com/watch?v=aaAvlNgF2AU)
 
 ## **Lab Setup**
 ### **Requirements**
