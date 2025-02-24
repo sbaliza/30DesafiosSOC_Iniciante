@@ -1,4 +1,4 @@
-# Lesson: PowerShell for Security Analysts
+# PowerShell for Security Analysts
 
 ---
 
