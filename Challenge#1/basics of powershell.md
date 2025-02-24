@@ -69,52 +69,52 @@ Set-ExecutionPolicy RemoteSigned   # Set to RemoteSigned
 ## 4. Use Cases for Security Analysts
 ### 4.1 Incident Response
 - Collect logs and system artifacts for forensic analysis.
-```
+```powershell
 Get-EventLog -LogName Security -Newest 100 | Export-Csv C:\Logs\SecurityLogs.csv
 ```
 
 ### 4.2 Threat Hunting
 - Identify suspicious processes or unusual network activity.
-```
+```powershell
 Get-Process | Where-Object { $_.CPU -gt 80 }
 Get-NetTCPConnection | Where-Object { $_.RemotePort -eq 4444 }
 ```
 
 ### 4.3 Vulnerability Assessment
 - Check for missing security patches.
-```
+```powershell
 Get-HotFix | Where-Object { $_.InstalledOn -lt (Get-Date).AddMonths(-6) }
 ```
 
 ### 4.4 Security Audits and Compliance
 - Audit user accounts and permissions.
-```
+```powershell
 Get-LocalUser
 Get-LocalGroupMember -Group "Administrators"
 ```
 
 ### 4.5 Automation and Scripting
 - Automate repetitive security tasks like log cleanup or system health checks.
-```
+```powershell
 Get-EventLog -LogName Application -EntryType Error -Newest 50 | Out-File C:\Logs\ErrorLogs.txt
 ```
 ## 5. PowerShell Basics
 ### 5.1 Basic Commands
-```
+```powershell
 Get-Help Get-Process   # Display help for a cmdlet
 Get-Command            # List all available cmdlets
 Get-Module             # List all imported modules
 ```
 
 ### 5.2 Variables and Data Types
-```
+```powershell
 $Name = "Security Analyst"
 $Number = 42
 $Array = @(1, 2, 3, 4)
 ```
 
 ### 5.3 Loops and Conditionals
-```
+```powershell
 # If-Else Statement
 $CPUUsage = Get-Process | Where-Object { $_.CPU -gt 80 }
 If ($CPUUsage) {
@@ -131,7 +131,7 @@ ForEach ($Process in $Processes) {
 ```
 
 ### 5.4 Functions
-```
+```powershell
 Function Get-HighCPU {
     Param($Threshold = 50)
     Get-Process | Where-Object { $_.CPU -gt $Threshold }
@@ -141,37 +141,37 @@ Get-HighCPU -Threshold 80
 
 ## 6. PowerShell Command Cheatsheet for Security Analysts
 ### 6.1 System Information
-```
+```powershell
 Get-ComputerInfo                    # System Information
 Get-WmiObject Win32_OperatingSystem  # Detailed OS Information
 ```
 
 ### 6.2 Process and Service Monitoring
-```
+```powershell
 Get-Process                         # List Running Processes
 Get-Service                         # List Installed Services
 Stop-Process -Name "notepad"         # Stop a 
 ```
 ### 6.3 Network Information
-```
+```powershell
 Get-NetAdapter                      # Network Adapter Information
 Get-NetTCPConnection                 # Active Network Connections
 ```
 
 ### 6.4 Event Log Analysis
-```
+```powershell
 Get-EventLog -LogName Security -Newest 100
 Get-WinEvent -LogName Application -MaxEvents 50
 ```
 
 ### 6.5 File and Directory Management
-```
+```powershell
 Get-ChildItem -Path C:\Logs -Recurse  # List all files in a directory
 Remove-Item -Path C:\Logs\*.log       # Delete all log files
 ```
 
 ### 6.6 User and Permissions Auditing
-```
+```powershell
 Get-LocalUser                        # List all Local Users
 Get-LocalGroup                       # List all Local Groups
 Get-LocalGroupMember -Group "Admins"  # List Admin Group Members
