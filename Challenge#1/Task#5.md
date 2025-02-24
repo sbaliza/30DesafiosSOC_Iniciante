@@ -87,10 +87,10 @@ grep "Failed password" /var/log/auth.log | awk '{print $9}' | sort | uniq -c | s
 - If a single user or IP has more than 5 failed attempts, it might indicate a brute-force attack.
 
 ## Conclusion
-✅ Successfully analyzed Linux authentication logs.
-✅ Detected failed SSH login attempts and privilege escalation attempts.
-✅ Used Linux commands to extract and analyze potential security threats.
-✅ Understood how SOC analysts detect brute-force attacks and unauthorized access.
+✅ Successfully analyzed Linux authentication logs.    
+✅ Detected failed SSH login attempts and privilege escalation attempts.    
+✅ Used Linux commands to extract and analyze potential security threats.    
+✅ Understood how SOC analysts detect brute-force attacks and unauthorized access.    
 
 ## Submission
 - Share a screenshot of the terminal output showing failed login attempts.
