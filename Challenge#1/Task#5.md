@@ -38,11 +38,11 @@ We will now simulate failed login attempts and privilege escalation, then detect
 1. Open Terminal.
 2. Attempt to SSH into the system with incorrect credentials:
 ```
-ssh invalid_user@localhost
+ssh ironman@localhost
 ```
 3. Try multiple incorrect passwords:
 ```
-ssh youruser@localhost
+ssh root@localhost
 ```
 - Enter incorrect passwords at least three times.
 
