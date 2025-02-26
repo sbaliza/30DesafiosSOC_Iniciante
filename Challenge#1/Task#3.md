@@ -22,6 +22,7 @@ If Sysmon is not installed, download and install it using the following steps:
 3. Open a **Command Prompt (Run as Administrator)** and install Sysmon with basic logging:  
    ```powershell
    sysmon -accepteula -i
+   ```
 4. Verify installation by checking for Sysmon logs in Event Viewer:
    ```
    Applications and Services Logs → Microsoft → Windows → Sysmon → Operational
