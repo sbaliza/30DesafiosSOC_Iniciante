@@ -1,97 +1,78 @@
-# **Task #1: Analyze Apache Logs for Suspicious Access Attempts Using Splunk**  
+# **Task #33: Detect High Number of 404 Errors (Reconnaissance Attempts) Using Splunk**  
 
 ## **Objective**  
-The objective of this task is to help students **analyze Apache access logs in Splunk to detect suspicious access attempts**. By completing this task, students will learn how to identify **brute-force attempts, directory traversal attacks, SQL injection attempts, and unusual user agents** from web server logs.
+The goal of this task is to help students **detect reconnaissance attempts** where attackers probe a web server for non-existent resources, often leading to **multiple 404 errors**. By analyzing Apache access logs in Splunk, students will identify **potential attackers scanning for vulnerabilities**.
 
 ---
 
-## **Preparation: Ingest Apache Logs into Splunk**  
+## **Video Tutorial**  
+📺 **Watch the video**  
+
+---
+
+## **Lab Setup**  
 
 ### **Requirements**  
-- **Splunk Server:** Installed and running.  
-- **Apache Web Server Logs:** (Access log file will be provided).  
-- **Splunk Forwarder (Optional):** If ingesting logs from a remote web server.  
+- **System:** Ubuntu 22.04/20.04 (Splunk Server)  
+- **Tools Required:**  
+  - **Splunk Enterprise or Splunk Cloud**  
+  - **Apache Web Server Logs (`access.log`)**  
 
-### **Step 1: Upload Apache Logs to Splunk**  
-1. If logs are in a file format (e.g., `access.log`), upload them manually:  
+### **Preparation**  
+
+**Ensure Apache Logs Are Ingested into Splunk**  
+1. If logs are stored locally, upload them manually:  
    ```splunk
    | inputlookup apache_logs.csv
    ```
-If logs are forwarded via Universal Forwarder, ensure they are indexed correctly by running:
-splunk
-Copy
-Edit
-index=web sourcetype=apache_access
-Verify that logs contain key fields such as:
-client_ip → Source IP address
-request → HTTP request path
-status → HTTP response code
-user_agent → Browser or bot details
-bytes_sent → Data sent in response
-Investigation Steps: Detecting Suspicious Access Attempts
-Step 1: Detect High Number of 404 Errors (Reconnaissance Attempts)
-Run the following query to identify IPs repeatedly requesting non-existent pages:
+2. If logs are forwarded via Splunk Universal Forwarder, ensure they are indexed correctly:
+   ```splunk
+   index=web sourcetype=apache_access
+   ```
 
-splunk
-Copy
-Edit
+## Attack Simulation & Detection Using Splunk
+We will now detect high-frequency 404 errors, which may indicate reconnaissance activity.
+
+### Step 1: Detect IPs Generating Multiple 404 Errors
+Run this query to identify IPs that repeatedly request non-existent pages:
+```
 index=web sourcetype=apache_access status=404
 | stats count by client_ip
 | sort -count
-Attackers often probe for admin panels or sensitive files.
-Step 2: Detect Brute-Force Login Attempts
-Run this query to identify repeated login attempts:
+```
+🚨 Attackers often scan for missing pages (e.g., /admin, /login, /backup.zip).
 
-splunk
-Copy
-Edit
-index=web sourcetype=apache_access request="/login"
-| stats count by client_ip
-| where count > 10
-If an IP has too many login attempts, it might be a brute-force attack.
-Step 3: Detect Directory Traversal Attacks
-Run this query to find requests attempting to access system files:
+### Step 2: Identify Scanning Behavior Over Time
+Run this query to analyze 404 errors by time to detect aggressive scanning patterns:
+```
+index=web sourcetype=apache_access status=404
+| timechart span=5m count by client_ip
+```
+🚨 A sudden spike in 404 errors may indicate an automated scanner or bot performing reconnaissance.
 
-splunk
-Copy
-Edit
-index=web sourcetype=apache_access request="*../*" OR request="*../../*"
-If found, it indicates an attempt to escape the web root directory.
-Step 4: Detect SQL Injection Attempts
-Run this query to find common SQL injection patterns in URLs:
+### Step 3: Identify the Most Requested Non-Existent Pages
+Run this query to list the most frequently requested URLs that returned a 404 error:
 
-splunk
-Copy
-Edit
-index=web sourcetype=apache_access request="*UNION*" OR request="*SELECT*" OR request="*DROP*" OR request="*INSERT*"
-Attackers may be trying to execute unauthorized SQL queries.
-Step 5: Detect Suspicious User Agents
-Run this query to identify unusual user agents (bots or scrapers):
-
-splunk
-Copy
-Edit
-index=web sourcetype=apache_access
-| stats count by user_agent
+```
+index=web sourcetype=apache_access status=404
+| stats count by request
 | sort -count
-Look for rare or missing user agents (e.g., curl, wget, or empty fields).
-Step 6: Extract Top Attacking IPs
-Run this query to list top offending IP addresses:
+```
+🚨 If many requests are targeting sensitive directories like /wp-admin/ or /config.php, attackers may be scanning for vulnerabilities.
 
-splunk
-Copy
-Edit
-index=web sourcetype=apache_access status=403 OR status=401 OR status=404
-| stats count by client_ip
-| sort -count
-These IPs can be checked against threat intelligence platforms like AbuseIPDB.
-Conclusion
-✅ Successfully ingested and analyzed Apache logs in Splunk.
-✅ Detected brute-force attempts, directory traversal, SQL injection, and reconnaissance activity.
-✅ Extracted top suspicious IPs and uncommon user agents for further investigation.
-✅ Learned how SOC analysts use Splunk to monitor web server activity and detect attacks.
+## Conclusion
+✅ Successfully detected reconnaissance activity using Apache logs in Splunk.    
+✅ Identified top attacking IPs repeatedly triggering 404 errors.    
+✅ Analyzed common scanning patterns and targeted pages.    
+✅ Learned how SOC analysts monitor for reconnaissance attempts using Splunk.    
 
-Submission
-Share a screenshot of a Splunk query result showing detected suspicious activities.
-Share a screenshot of logs confirming multiple failed access attempts.
-Write a short observation on how web log analysis helps prevent security breaches.
+## Submission
+- Share a screenshot of the Splunk query results showing frequent 404 errors.   
+- Share a screenshot of the time-based trend analysis for 404 errors.   
+- Write a short observation on how reconnaissance detection helps prevent attacks.   
+
+
+
+
+
+
