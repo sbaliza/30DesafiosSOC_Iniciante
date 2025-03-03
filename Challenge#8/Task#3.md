@@ -5,11 +5,6 @@ The goal of this task is to help students **identify directory traversal attacks
 
 ---
 
-## **Video Tutorial**  
-📺 **Watch the video**  
-
----
-
 ## **Lab Setup**  
 
 ### **Requirements**  
