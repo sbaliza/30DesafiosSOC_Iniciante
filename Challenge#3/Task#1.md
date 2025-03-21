@@ -68,7 +68,7 @@ If confirmed malicious:
 - Collect the full Sysmon event logs for further investigation.
 - Check for persistence mechanisms (e.g., autoruns, scheduled tasks).
 
-### Step5: Reporting & Documentation🧾
+### Step 5: Reporting & Documentation🧾
 Document Findings
 - Time of detection.
 - Process details.
