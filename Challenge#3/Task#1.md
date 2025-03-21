@@ -61,14 +61,20 @@ Applications and Services Logs → Microsoft → Windows → Sysmon → Operatio
 - Command Line Arguments: `/c whoami & ipconfig & tasklist`
 - Process Path and User Account Details
 
-### Step 4: Retrieve Sysmon Process Logs Using PowerShell
-Instead of using Event Viewer, use PowerShell to extract process execution logs:
+### Step 4: Response and Containment(For Real-World Environment)
+If confirmed malicious:
+- Right-click in Task Manager → End Process.
+- Isolate the system from the network (for safety).
+- Collect the full Sysmon event logs for further investigation.
+- Check for persistence mechanisms (e.g., autoruns, scheduled tasks).
 
-```
-Get-WinEvent -LogName "Microsoft-Windows-Sysmon/Operational" | Where-Object {$_.Id -eq 1} | Select-Object TimeCreated, Message | Format-Table -AutoSize
-```
-- This command retrieves all Sysmon process execution logs.
-- Look for `cmd.exe` initiated by `powershell.exe`.
+###🧾 Step5 5: Reporting & Documentation
+Document Findings
+- Time of detection.
+- Process details.
+- User account involved.
+- Actions taken.
+- Save relevant Sysmon log entries (Event ID 1).
 
 ## Conclusion
 ✅ Successfully simulated a suspicious process execution.      
