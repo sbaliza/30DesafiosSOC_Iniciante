@@ -53,7 +53,7 @@ Before proceeding, make sure PowerShell script block logging is enabled on your 
 1. Open **PowerShell** as Administrator.
 2. Run the following PowerShell command to generate a log entry:
 ```powershell
-Get-LocalUser | Select-Object Name, Enabled
+Get-Process | Where-Object { $_.CPU -gt 10 }
 ```
 This command will list the local users on your system, which attackers might use to gather information during post-exploitation.
 
