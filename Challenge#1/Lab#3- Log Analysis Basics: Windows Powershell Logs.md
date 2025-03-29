@@ -79,15 +79,14 @@ This command simulates downloading a malicious payload from a remote server.
 4. Take a screenshot of the event details.     
 
 ### **Step 4: Analyze Suspicious PowerShell Logs**
-- Investigate any PowerShell events that show script execution from suspicious sources or unexpected locations.
-- Identify the user executing the command and any related system activity (e.g., downloading files, executing binaries).
-- Review the Event ID 4104 logs and check for patterns such as unusual script execution or command-line arguments that could indicate malicious behavior.
-
+- Hunt for suspicious script executions from unknown sources or non-standard paths.
+- Correlate user activity with system behavior like file downloads or binary execution.
+- Inspect Event ID 4104 for odd commands, encoded scripts, or known attack patterns.
 
 ## Conclusion:
-- Understanding PowerShell Logs: PowerShell logs are crucial for detecting the misuse of PowerShell by attackers. By analyzing PowerShell event logs, you can identify suspicious commands and potential security threats.
-- SOC Analyst Role: As a SOC Analyst, reviewing these logs is vital for detecting post-exploitation activities, including malicious PowerShell commands often used for lateral movement, credential dumping, and payload execution.
-- Threat Detection: Monitoring PowerShell logs can help identify abnormal activity early, allowing for faster detection and response to potential threats.
+- PowerShell Logs: Key to spotting malicious command usage.
+- SOC Analyst Role: Review logs to detect post-exploitation actions.
+- Threat Detection: Flags abnormal activity for faster response.
 
 ## Submission:
 - Event ID 4104 (PowerShell Script Execution): Submit a screenshot showing a PowerShell script execution event from the logs.
