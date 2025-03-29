@@ -53,14 +53,6 @@ Applications and Services Logs → Microsoft → Windows → PowerShell → Oper
 4. Locate the entry showing the execution of the Get-LocalUser command.
 5. Take a screenshot of the event details.
 
-### Step 3: Retrieve Logs using PowerShell (Alternative Detection Method)
-Instead of using Event Viewer, use PowerShell to directly extract the event:
-
-```
-Get-WinEvent -LogName "Microsoft-Windows-PowerShell/Operational" | Where-Object {$_.Id -eq 4104} | Select-Object TimeCreated, Message
-```
-- This command fetches all script block executions from PowerShell logs and filters them by Event ID 4104.
-- Look for the command Get-LocalUser in the output.
 
 ## Conclusion
 ✅ Successfully simulated an attacker’s reconnaissance technique using PowerShell.    
