@@ -5,11 +5,6 @@ The objective of this lab is to introduce students to the basics of **log analys
 
 ---
 
-## **Video Tutorial**
-[![Watch the video](https://img.youtube.com/vi/OO7LqeBjrYE/hqdefault.jpg)](https://www.youtube.com/watch?v=OO7LqeBjrYE)
-
----
-
 ## **Lab Setup**
 ### **Requirements:**
 - **Systems:** Windows 10/11 or Windows Server 2019/2022, Linux (Ubuntu or CentOS)
