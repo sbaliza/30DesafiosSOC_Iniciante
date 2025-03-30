@@ -26,13 +26,11 @@ To learn how to search and analyze authentication logs using Splunk to detect un
 📥 Submit the answers below along with screenshots from your Splunk queries.
 
 
-### Question 1: **What is the total number of success events in this log file?**
+Question 1: **What is the total number of success events in this log file?**
 
+Question 2: **What is the most common event triggered and captured in this log file?**
 
-### Question 2: **What is the most common event triggered and captured in this log file?**
-
-
-### Question 3: **If a user “jaimin_pathak” with a uid “1010” tried accessing a linux server. What the logfile path accessed by him twice?**
+Question 3: **If a user “jaimin_pathak” with a uid “1010” tried accessing a linux server. What the logfile path accessed by him twice?**
 
 
 
