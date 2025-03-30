@@ -30,4 +30,10 @@ Question 2:  **What is the IP Address of the user “thor”?**
 
 Question 3:  **How many times user “thor” failed to login?**
 
+## ✅ Conclusion
 
+In this lab, you learned how to perform a basic security investigation using Splunk by analyzing SSH logs for brute-force attack attempts. You practiced using search queries, filtering data by specific fields such as `user`, `src_ip`, and `action`, and interpreting results to answer real-world security questions.
+This exercise helped you:
+- Understand how attackers attempt brute-force logins.
+- Get hands-on experience with Splunk Search Processing Language (SPL).
+- Develop analytical thinking to trace and respond to suspicious activities.
