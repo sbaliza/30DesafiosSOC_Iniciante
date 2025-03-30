@@ -14,8 +14,7 @@ The objective of this lab is to help students analyze **FTP (File Transfer Proto
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **FTP Sample PCAP File:** [Download FTP pcap](https://wiki.wireshark.org/SampleCaptures#FTP)  
-  *(Example: `ftp.cap` or `ftp.pcap` from Wireshark sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
