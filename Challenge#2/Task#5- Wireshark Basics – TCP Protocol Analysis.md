@@ -14,8 +14,7 @@ The objective of this lab is to introduce students to analyzing **TCP (Transmiss
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **TCP Sample PCAP File:** [Download TCP pcap](https://wiki.wireshark.org/SampleCaptures#TCP)  
-  *(Example: `tcp-3way-handshake.pcap` or similar from sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
