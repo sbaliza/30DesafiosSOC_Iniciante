@@ -1,4 +1,4 @@
-# 🧪 Lab 3: Unauthorized User Creation (Persistence)
+# 🧪 Lab 4: Unauthorized User Creation (Persistence)
 
 ## 🎯 Objective
 Detect unauthorized user account creation and respond to persistent backdoor access.
