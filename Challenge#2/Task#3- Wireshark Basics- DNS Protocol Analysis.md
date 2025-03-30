@@ -11,12 +11,10 @@ The objective of this lab is to introduce students to analyzing **DNS (Domain Na
 
 ### **System Requirements**
 - **Operating System:** Windows 10/11 (or Linux/macOS)
-- **RAM:** Minimum 4 GB
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **DNS Sample PCAP File:** [Download DNS pcap](https://wiki.wireshark.org/SampleCaptures#DNS)  
-  *(Example: `dns.cap` from Wireshark sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
