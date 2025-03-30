@@ -10,7 +10,7 @@ To learn how to search and analyze SSH logs using Splunk to identify brute-force
 
 ## 🛠️ Lab Setup
 - **Ubuntu Server** (22.04 or later)
-- [Download linux Auth log sample]
+- [Download linux Auth log sample](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/blob/main/linux_auth_logs.json)
 
 
 ## Pre-requisite
