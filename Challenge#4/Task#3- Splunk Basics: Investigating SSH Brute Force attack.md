@@ -24,10 +24,10 @@ To learn how to search and analyze SSH logs using Splunk to identify brute-force
 
 ---
 
-###  Question 1:  **Which user has attempted the most number of SSH brute-force attempts?**
+Question 1:  **Which user has attempted the most number of SSH brute-force attempts?**
 
-###  Question 2:  **What is the IP Address of the user “thor”?**
+Question 2:  **What is the IP Address of the user “thor”?**
 
-###  Question 3:  **How many times user “thor” failed to login?**
+Question 3:  **How many times user “thor” failed to login?**
 
 
