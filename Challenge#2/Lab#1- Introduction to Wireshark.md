@@ -1,4 +1,4 @@
-# **Lab#6: Introduction to Wireshark – Packet Analysis for SOC Analysts**
+# **Lab#1: Introduction to Wireshark – Packet Analysis for SOC Analysts**
 
 ---
 
