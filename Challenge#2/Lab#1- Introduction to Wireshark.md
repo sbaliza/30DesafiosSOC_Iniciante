@@ -11,13 +11,11 @@ The objective of this lab is to introduce students to **Wireshark**, a powerful 
 
 ### **System Requirements**
 - **Operating System:** Windows, Linux, or macOS
-- **RAM:** Minimum 4 GB
 - **Network Adapter:** Required for packet capture
 
 ### **Software Required**
 - [Wireshark](https://www.wireshark.org/download.html) (latest stable version)
-- Sample PCAP files (optional: download from [https://www.malware-traffic-analysis.net](https://www.malware-traffic-analysis.net))
-- Internet connectivity (for live capture or downloading examples)
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
