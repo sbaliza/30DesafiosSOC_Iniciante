@@ -14,8 +14,7 @@ The objective of this lab is to help students analyze **UDP (User Datagram Proto
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **UDP Sample PCAP File:** [Download UDP pcap](https://wiki.wireshark.org/SampleCaptures#UDP)  
-  *(Example: `dns.cap`, `dhcp.pcap`, or `udp.pcap` from Wireshark sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
