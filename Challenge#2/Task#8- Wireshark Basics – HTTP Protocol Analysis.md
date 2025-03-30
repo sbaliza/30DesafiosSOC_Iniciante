@@ -14,8 +14,7 @@ The objective of this lab is to help students analyze **HTTP (Hypertext Transfer
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **HTTP Sample PCAP File:** [Download HTTP pcap](https://wiki.wireshark.org/SampleCaptures#HTTP)  
-  *(Example: `http.cap` or `http.pcap` from Wireshark sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
