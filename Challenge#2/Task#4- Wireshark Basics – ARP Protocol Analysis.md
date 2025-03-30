@@ -11,7 +11,6 @@ The objective of this lab is to help students analyze **ARP (Address Resolution 
 
 ### **System Requirements**
 - **Operating System:** Windows 10/11 (or Linux/macOS)
-- **RAM:** Minimum 4 GB
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
