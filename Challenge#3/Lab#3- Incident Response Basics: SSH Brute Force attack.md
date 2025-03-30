@@ -1,4 +1,4 @@
-# 🧪 Lab 1: SSH Brute Force Attack Detection on Ubuntu   
+# 🧪 Lab 3: SSH Brute Force Attack Detection on Ubuntu   
 ## 🎯 Objective   
 Detect, investigate, and respond to an SSH brute-force attack on an Ubuntu server using log analysis.    
   
