@@ -14,8 +14,7 @@ The objective of this lab is to help students analyze **DHCP (Dynamic Host Confi
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **DHCP Sample PCAP File:** [Download DHCP pcap](https://wiki.wireshark.org/SampleCaptures#DHCP)  
-  *(Example: `dhcp.pcap` from Wireshark sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
