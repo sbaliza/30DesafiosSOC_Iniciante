@@ -10,8 +10,8 @@ The objective of this lab is to simulate a **network-based port scan attack** an
 ## 🛠️ **Lab Setup**
 
 ### **System Requirements**
-- **Operating System:** Ubuntu/Debian-based Linux (VM or local)
-- **Access:** Terminal with `sudo` privileges
+- **Attacker Machine:**: Kali Linux
+- **Target Machine**: Ubuntu Linux
 
 ### **Tools Needed**
 - `nmap` (on attacker machine)
