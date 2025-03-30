@@ -14,8 +14,7 @@ The objective of this lab is to help students analyze **TLS (Transport Layer Sec
 - **Software:** Wireshark (latest version)
 
 ### **Files Needed**
-- **TLS Sample PCAP File:** [Download TLS pcap](https://wiki.wireshark.org/SampleCaptures#SSL/TLS)  
-  *(Example: `tls-handshake.pcap`, `https.cap`, or `ssl.pcap` from Wireshark sample captures)*
+- [Download Sample PCAP file](https://github.com/0xrajneesh/90-Days-SOC-Challenge-Beginner/raw/refs/heads/main/Protocol_Analysis_pcap.pcapng)
 
 ---
 
