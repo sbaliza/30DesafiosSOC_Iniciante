@@ -1,4 +1,4 @@
-# **Lab#13: Wireshark Basics – HTTP Protocol Analysis**
+# **Day#9: Wireshark Basics – HTTP Protocol Analysis**
 
 ---
 
