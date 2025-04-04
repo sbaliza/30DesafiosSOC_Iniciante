@@ -5,36 +5,6 @@ The objective of this lab is to introduce students to the **core concepts of inc
 
 ---
 
-## **Lab Setup**
-
-### **Requirements:**
-- **System:** Windows 10/11 or Windows Server 2019/2022
-- **Tools:**
-  - **Windows Event Viewer**
-  - **PowerShell (Pre-installed)**
-  - **Task Manager / Process Explorer**
-  - **Sysinternals Tools (optional)**
-
----
-
-## **Preparation:**
-
-Before diving into the lab, ensure the system is logging essential security-related events and the environment is prepared for simulating a basic security incident.
-
-### **Enable Audit Logging:**
-1. Open **Local Security Policy** (`secpol.msc`).
-2. Navigate to:  
-   `Advanced Audit Policy Configuration → Audit Policies → Logon/Logoff`.
-3. Enable:
-   - **Audit Logon Events** (Success, Failure)
-   - **Audit Process Creation**
-
-4. Use Group Policy or Registry to enable:
-   - **Script Block Logging** for PowerShell
-   - **Module Logging**
-
----
-
 ## **What is Incident Response?**
 
 **Incident Response (IR)** is the structured approach to handle and manage the aftermath of a **security breach or cyberattack**, also known as an incident. It includes steps to:
@@ -104,6 +74,37 @@ The NIST Incident Response Lifecycle includes **4 main phases**:
 ---
 
 ## **Lab Task: Simulating and Responding to Unauthorized Access**
+
+## **Lab Setup**
+
+### **Requirements:**
+- **System:** Windows 10/11 or Windows Server 2019/2022
+- **Tools:**
+  - **Windows Event Viewer**
+  - **PowerShell (Pre-installed)**
+  - **Task Manager / Process Explorer**
+  - **Sysinternals Tools (optional)**
+
+---
+
+## **Preparation:**
+
+Before diving into the lab, ensure the system is logging essential security-related events and the environment is prepared for simulating a basic security incident.
+
+### **Enable Audit Logging:**
+1. Open **Local Security Policy** (`secpol.msc`).
+2. Navigate to:  
+   `Advanced Audit Policy Configuration → Audit Policies → Logon/Logoff`.
+3. Enable:
+   - **Audit Logon Events** (Success, Failure)
+   - **Audit Process Creation**
+
+4. Use Group Policy or Registry to enable:
+   - **Script Block Logging** for PowerShell
+   - **Module Logging**
+
+---
+
 
 ### **Step 1: Simulate a Failed Login Attempt**
 1. On the Windows machine, **lock the system** (`Win + L`).
