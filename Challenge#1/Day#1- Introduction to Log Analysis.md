@@ -76,7 +76,7 @@ Logs are essential for understanding system behavior, detecting security inciden
 
 ---
 
-## **Lab Task: Generate a Simple Log on Windows Machine**
+## **Lab Task: Simulating and Detecting Windows events**
 
 ### **Step 1: Simulate a Suspicious PowerShell Command**
 To simulate a suspicious activity, open an elevated PowerShell session and run the following command:
