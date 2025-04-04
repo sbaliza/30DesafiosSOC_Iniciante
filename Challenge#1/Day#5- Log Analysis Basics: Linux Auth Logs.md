@@ -1,4 +1,4 @@
-# **Lab#5: Log Analysis Basics – Linux Auth Log**
+# **Day#5: Log Analysis Basics – Linux Auth Log**
 
 ---
 
