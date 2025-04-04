@@ -1,4 +1,4 @@
-# **Lab#4: Log Analysis Basics – Network-Based Attack Detection Using Syslog**
+# **Day#4: Log Analysis Basics – Network-Based Attack Detection Using Syslog**
 
 ---
 
