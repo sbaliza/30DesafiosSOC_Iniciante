@@ -1,4 +1,4 @@
-# **Lab#10: Wireshark Basics – TCP Protocol Analysis**
+# **Day#8: Wireshark Basics – TCP Protocol Analysis**
 
 ---
 
