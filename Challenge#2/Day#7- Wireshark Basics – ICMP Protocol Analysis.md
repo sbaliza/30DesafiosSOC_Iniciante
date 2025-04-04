@@ -1,4 +1,4 @@
-# **Lab#2: Wireshark Basics – ICMP Protocol Analysis**
+# **Day#7: Wireshark Basics – ICMP Protocol Analysis**
 
 ---
 
