@@ -1,4 +1,4 @@
-# **Lab#9: Wireshark Basics – TLS Protocol Analysis**
+# **Day#10: Wireshark Basics – TLS Protocol Analysis**
 
 ---
 
