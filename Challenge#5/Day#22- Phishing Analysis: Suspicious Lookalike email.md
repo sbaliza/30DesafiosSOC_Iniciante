@@ -10,7 +10,7 @@ The objective of this lab is to analyze a real-world phishing email sample using
 
 ## 🛠️ **Lab Setup**
 
-- 📨 Download Email Sample (.eml): [Click to download sample-1.eml](https://github.com/0xrajneesh/30-Days-SOC-Challenge-Beginner/blob/main/BRADESCO%20LIVELO.eml)  
+- 📨 [Download Email Sample (.eml)](https://github.com/0xrajneesh/30-Days-SOC-Challenge-Beginner/blob/main/BRADESCO%20LIVELO.eml)  
 - 💻 Tools Recommended:
   - [MX Toolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
   - [EML Analyzer](https://eml-analyzer.herokuapp.com/#/)
