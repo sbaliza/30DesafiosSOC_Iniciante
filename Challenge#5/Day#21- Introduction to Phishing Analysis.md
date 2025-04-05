@@ -85,13 +85,16 @@ Learn how to analyze a phishing email by examining headers, body, URLs, and atta
 
 
 
-## ✅ **Bonus Tips**
+##🧪 **Task: Investigating a Lookalike Domain Email**
 
-- Never open files or click links from unknown sources.
-- Use a sandbox or virtual machine for attachment testing.
-- Always check SPF/DKIM/DMARC alignment to validate the sender.
-- Train end users on phishing awareness regularly.
+### **Scenario:**
+Your security team received a suspicious email claiming to be from PayPal. The sender address is:  
+`noreply@secure-paypai.com`
 
----
+Now, please answer below question
 
-Let me know if you want to include a **real sample email** or convert this into a **hands-on lab with tasks + submission instructions**!
+Question 1: What is the reputation of the domain?
+
+
+### Submission
+- Share the snapshot showing the reputation of teh domain
