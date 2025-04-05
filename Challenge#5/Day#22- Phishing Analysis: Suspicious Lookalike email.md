@@ -31,25 +31,23 @@ Investigate and answer the following:
 
 ### 🔍 **Questions:**
 
-1. **Is the sender domain (`atendimento.com.br`) a legitimate domain owned by Bradesco?**  
-   → _Use Whois lookup or domain reputation services._
+1. **What is the full email address of the sender?**  
+2. **What domain is used to send this email?** (Check Return-Path or From)
+3. **What is the sender’s IP address from the header?**  
+4. **Is the sender IP blacklisted?** (Check using AbuseIPDB or VirusTotal – Answer Yes/No)  
+5. **What is the result of SPF authentication?** (Pass / Fail / Neutral)  
+6. **What is one suspicious URL or link found in the email body?**  
 
-2. **What is the actual IP address that sent this email?**  
-   → _Inspect the email headers for `Received:` lines or `X-Sender-IP` field._
-
-3. **Does the IP address have a poor reputation or appear on any blacklist?**  
-   → _Use VirusTotal or AbuseIPDB to check for known abuse._
-
-4. **What do the SPF, DKIM, and DMARC authentication results show?**  
-   → _Check `Authentication-Results` in the header. Is it aligned properly?_
-
-5. **Is there any suspicious link or domain in the body of the email?**  
-   → _Inspect the HTML body or convert the base64 content to readable HTML._
-
-6. **Based on your findings, would you classify this as phishing? Why or why not?**  
-   → _Provide your reasoning based on sender reputation, header anomalies, urgency tone, and link behavior._
 
 ---
+
+
+## 📸 **Submit the Following Screenshots:**
+
+1. Screenshot of the email header with sender, Return-Path, and IP address highlighted.  
+2. Screenshot of the IP reputation lookup result (AbuseIPDB or VirusTotal).  
+3. Screenshot of the suspicious link found in the email body.  
+4. Screenshot of the email content or HTML preview that shows urgency, branding, or spoofing.  
 
 ## ✅ **Learning Outcome**
 
