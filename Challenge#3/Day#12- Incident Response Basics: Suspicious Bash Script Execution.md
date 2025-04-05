@@ -1,4 +1,4 @@
-# **Day#12: Incident Response Basics – Suspicious Bash Script Execution**
+# **Day#12: Incident Response Basics – Linux Suspicious Bash Script Execution**
 
 ---
 
