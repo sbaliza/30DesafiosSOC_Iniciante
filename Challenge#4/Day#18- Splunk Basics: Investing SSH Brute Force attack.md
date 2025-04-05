@@ -1,4 +1,4 @@
-# Lab#4- Splunk Basics: Investigating SSH Brute Force attack
+# Lab#18- Splunk Basics: Investigating SSH Brute Force attack
 
 ---
 
