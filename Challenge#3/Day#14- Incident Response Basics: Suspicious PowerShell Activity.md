@@ -1,4 +1,4 @@
-# **Day#3: Detecting Suspicious PowerShell Activity – Windows Incident Response Lab**
+# **Day#14: Detecting Suspicious PowerShell Activity – Windows Incident Response Lab**
 
 ---
 
