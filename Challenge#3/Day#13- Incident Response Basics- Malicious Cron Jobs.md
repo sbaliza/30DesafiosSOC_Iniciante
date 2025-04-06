@@ -1,4 +1,4 @@
-# **Day#2: Detecting and Removing Malicious Cron Jobs – Linux Incident Response Lab**
+# **Day#13: Detecting and Removing Malicious Cron Jobs – Linux Incident Response Lab**
 
 ---
 
