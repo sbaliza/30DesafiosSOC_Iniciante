@@ -1,4 +1,4 @@
-# **Task #3: EDR Basics: Detecting SSH Brute Force attack**
+# **Task #28: EDR Basics: Detecting SSH Brute Force attack**
 
 ## **Objective**  
 The objective of this task is to help students **detect SSH brute-force attacks** on an Ubuntu machine using **Wazuh’s security monitoring capabilities**. Students will simulate an SSH brute-force attack, analyze logs, and detect suspicious authentication attempts using Wazuh alerts.
