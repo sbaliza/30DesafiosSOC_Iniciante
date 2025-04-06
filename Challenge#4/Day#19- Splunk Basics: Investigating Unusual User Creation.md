@@ -1,4 +1,4 @@
-# Day#19- Splunk Basics: Unusual User Creation
+# Day#19- Splunk Basics: Investigating Unusual User Creation
 ---
 
 ## 🎯 Objective
