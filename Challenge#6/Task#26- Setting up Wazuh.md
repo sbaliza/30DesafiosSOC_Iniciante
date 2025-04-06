@@ -5,7 +5,37 @@ The objective of this task is to help students **set up a Wazuh Server using the
 
 ---
 
-## **Preparation**  
+## 🧠 **Introduction to EDR (Endpoint Detection and Response)**
+
+**EDR** refers to tools that monitor, record, and analyze activities on endpoints (servers, desktops, laptops) to detect malicious behavior, help in incident response, and enable threat hunting.
+
+---
+
+## 🔎 **How Does a SOC Analyst Use EDR?**
+
+SOC Analysts rely on EDR tools to:
+- Detect suspicious behaviors (e.g., process injection, lateral movement)
+- Investigate alerts and correlate activity over time
+- Isolate or respond to infected endpoints
+- Pull forensic artifacts like logs, memory dumps, and timelines
+- Hunt for threat indicators (IOCs)
+
+---
+
+## 🏆 **Popular EDR Platforms**
+
+| Platform           | Description                                              |
+|--------------------|----------------------------------------------------------|
+| **Wazuh**           | Open-source SIEM + EDR, host-based log monitoring, FIM   |
+| **Microsoft Defender for Endpoint** | Native EDR for Windows with behavioral analytics   |
+| **CrowdStrike Falcon**   | Cloud-based EDR with threat hunting capabilities     |
+| **SentinelOne**     | Autonomous endpoint protection and rollback features     |
+| **Elastic Endpoint (with ELK)** | Lightweight endpoint monitoring integrated into Elastic SIEM |
+
+---
+
+## **Lab Task: Setting up Wazuh EDR**  
+
 ### **Requirements**  
 - **System 1:** Ubuntu 22.04/20.04 (Wazuh Server)  
 - **System 2:** Ubuntu 22.04/20.04 (Agent Machine to be monitored)  
@@ -17,8 +47,6 @@ The objective of this task is to help students **set up a Wazuh Server using the
 - **User Permissions:** Root or sudo privileges on both machines.  
 
 ---
-
-## **Installation Steps**  
 
 ### **Step 1: Install Wazuh Server Using Quick Start**
 1. Download and run the Wazuh installation assistant.
@@ -72,13 +100,15 @@ sudo systemctl enable wazuh-agent
 2. Navigate to "Agents" in the Wazuh UI.
 3. Check if the Ubuntu agent is listed as "Active".
 
+## Submission
+- Share a screenshot of the Wazuh dashboard showing the active agent.
+- Share a screenshot of the Wazuh logs confirming successful agent onboarding.
+- Write a short observation on how Wazuh helps in security monitoring.
+
 ## Conclusion
 ✅ Successfully installed Wazuh Server using the Quick Start method.    
 ✅ Deployed Wazuh Agent on an Ubuntu machine for monitoring.   
 ✅ Verified agent connection in the Wazuh Dashboard.    
 ✅ Learned how SOC analysts use Wazuh for security monitoring and log analysis.    
 
-## Submission
-- Share a screenshot of the Wazuh dashboard showing the active agent.
-- Share a screenshot of the Wazuh logs confirming successful agent onboarding.
-- Write a short observation on how Wazuh helps in security monitoring.
+
