@@ -1,4 +1,4 @@
-# **Phishing Analysis Lab – Investigating a Suspicious Lookalike Email**
+# **Day#22- Phishing Analysis: Investigating a Suspicious Lookalike Email**
 
 ---
 
