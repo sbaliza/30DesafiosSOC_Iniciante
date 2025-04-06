@@ -49,18 +49,8 @@ Some common **Event IDs** in **Windows Security Logs** that you will encounter i
 
 ## **Lab Task: Explore and Analyze Windows Security Logs**
 
-### **Step 1: Generate a Sample Logon Event**
-1. Log into the Windows system with your credentials.
-2. In the **Event Viewer**, navigate to:  
-   `Windows Logs → Security`
-3. Look for **Event ID 4624** (Successful Logon). This event will show you the successful logins to the system.
-4. Take a screenshot of the event details, including:
-   - User Name
-   - Logon Type
-   - Source Network Address
-   - Logon Time
 
-### **Step 2: Simulate a Failed Login Attempt**
+### **Step 1: Simulate a Failed Login Attempt**
 1. Open **Command Prompt** and enter an invalid username and password. You can do this by using the following command:
    ```cmd
    net user invaliduser invalidpassword
@@ -74,15 +64,15 @@ Some common **Event IDs** in **Windows Security Logs** that you will encounter i
    - Logon Type
    - Source Network Address
 
-### Step 3: Check for Account Lockouts
-1. Attempt a few additional failed logins to intentionally lock out the account (e.g., 5 failed login attempts).
-2. After the account is locked, look for Event ID 4740 (Account Lockout).
-3. Analyze the event details:
- - Locked User Account
- - Lockout Time
- - Source IP Address
-4. Take a screenshot of the account lockout event.
-
+### **Step 2: Detect the Log in Windows Event Viewer**
+1. In the **Event Viewer**, navigate to:  
+   `Windows Logs → Security`
+2. Look for **Event ID 4624** (Successful Logon). This event will show you the successful logins to the system.
+3. Take a screenshot of the event details, including:
+   - User Name
+   - Logon Type
+   - Source Network Address
+   - Logon Time
 
 ## Conclusion:
 - Understanding Windows Security Logs: Windows Security Logs are essential for identifying suspicious behavior such as unauthorized login attempts, privilege escalation, and system configuration changes.
