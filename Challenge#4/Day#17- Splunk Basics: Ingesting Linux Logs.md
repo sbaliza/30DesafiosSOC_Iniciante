@@ -1,4 +1,4 @@
-# **Day#17: Ingest Syslog of a Remote Ubuntu Machine Using Universal Forwarder**
+# **Day#17: Splunk Basics: On board Linux Machine**
 
 ## **Objective**  
 The objective of this task is to help students **set up Splunk Universal Forwarder on a remote Ubuntu machine** and **ingest syslog data into a central Splunk server**. By completing this task, students will learn how to forward logs from a remote system to a Splunk indexer.
