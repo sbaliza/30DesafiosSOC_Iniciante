@@ -85,8 +85,6 @@ For this lab, you will need to set up log collection on both Windows and Linux s
    - Go to **Applications and Services Logs → Microsoft → Windows → PowerShell → Operational**.
 
 
-2. Use a text editor (`nano` or `vim`) to explore the contents of these logs.
-
 
 ### **Step 1: Simulate a Suspicious PowerShell Command**
 To simulate a suspicious activity, open an elevated PowerShell session and run the following command:
