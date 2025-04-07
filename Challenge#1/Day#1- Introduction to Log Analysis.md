@@ -16,6 +16,20 @@ A **log** is a record of events in a system that captures important actions like
 Logs are essential for understanding system behavior, detecting security incidents, and conducting forensic investigations.
 
 ---
+## **Example logs**
+```
+Apr  7 10:42:15 ubuntu sshd[12345]: Failed password for invalid user admin from 192.168.1.100 port 54321 ssh2
+```
+Explanation:
+- `Apr 7 10:42:15` — Timestamp
+- `ubuntu` — Hostname
+- `sshd[12345]` — Service name and process ID
+- `Failed password for invalid user admi`n — Failed login attempt
+- `from 192.168.1.100` — Source IP address
+- `port 54321` — Source port
+- `ssh2` — Protocol version
+
+
 
 ## **Log Sources on Linux:**
 - **System Logs:** Stored in `/var/log/`, including files like `syslog` (system messages), `auth.log` (authentication attempts), and `kern.log` (kernel-related logs).
