@@ -86,7 +86,7 @@ Get-LocalUser | Select-Object Name, Enabled
 ```
 This command lists all local user accounts on the system, which could be used by attackers to enumerate users post-exploitation.
 
-### **Step 3: Detect the Log in Windows Event Viewer**
+### **Step 2: Detect the Log in Windows Event Viewer**
 1. Press `Win + R`, type `eventvwr.msc`, and press Enter.
 
 2. Navigate to:
