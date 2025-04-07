@@ -17,6 +17,8 @@ Logs are essential for understanding system behavior, detecting security inciden
 
 ---
 ## **Example logs**
+
+🐧Linux auth.log Example
 ```
 Apr  7 10:42:15 ubuntu sshd[12345]: Failed password for invalid user admin from 192.168.1.100 port 54321 ssh2
 ```
