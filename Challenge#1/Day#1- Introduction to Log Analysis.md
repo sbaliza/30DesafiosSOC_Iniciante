@@ -70,8 +70,6 @@ Explanation:
 - **Tools:**
   - **Windows Event Viewer**
   - **PowerShell (Pre-installed on Windows)**
-  - **Text Editor (Notepad or nano)**
-  - **Terminal (Linux)**
 
 ---
 
