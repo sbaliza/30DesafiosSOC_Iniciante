@@ -62,7 +62,7 @@ Explanation:
 
 ---
 
-## **Lab Task: Simulating and Detecting Windows events**
+## **Lab Task: Simulating and Detecting Windows Powershell events**
 
 ## **Lab Setup**
 ### **Requirements:**
@@ -86,10 +86,6 @@ For this lab, you will need to set up log collection on both Windows and Linux s
 2. Open **Event Viewer**:
    - Go to **Applications and Services Logs → Microsoft → Windows → PowerShell → Operational**.
 
-### **On Linux:**
-1. Logs are usually stored in `/var/log/`. Common logs to review include:
-   - `/var/log/auth.log` for authentication logs.
-   - `/var/log/syslog` for system logs.
 
 2. Use a text editor (`nano` or `vim`) to explore the contents of these logs.
 
