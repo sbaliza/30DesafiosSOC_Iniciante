@@ -5,36 +5,6 @@ The objective of this lab is to introduce students to the basics of **log analys
 
 ---
 
-## **Lab Setup**
-### **Requirements:**
-- **Systems:** Windows 10/11 or Windows Server 2019/2022, Linux (Ubuntu or CentOS)
-- **Tools:**
-  - **Windows Event Viewer**
-  - **PowerShell (Pre-installed on Windows)**
-  - **Text Editor (Notepad or nano)**
-  - **Terminal (Linux)**
-
----
-
-## **Preparation:**
-For this lab, you will need to set up log collection on both Windows and Linux systems. Follow these steps to ensure everything is ready:
-
-### **On Windows:**
-1. Open **Group Policy Editor** (`gpedit.msc`):
-   - Navigate to `Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`.
-   - Ensure that **Module Logging**, **Script Block Logging**, and **Script Execution** are enabled.
-
-2. Open **Event Viewer**:
-   - Go to **Applications and Services Logs → Microsoft → Windows → PowerShell → Operational**.
-
-### **On Linux:**
-1. Logs are usually stored in `/var/log/`. Common logs to review include:
-   - `/var/log/auth.log` for authentication logs.
-   - `/var/log/syslog` for system logs.
-
-2. Use a text editor (`nano` or `vim`) to explore the contents of these logs.
-
----
 
 ## **What is a Log?**
 A **log** is a record of events in a system that captures important actions like errors, warnings, or user activities. These logs contain key information such as:
@@ -77,6 +47,36 @@ Logs are essential for understanding system behavior, detecting security inciden
 ---
 
 ## **Lab Task: Simulating and Detecting Windows events**
+
+## **Lab Setup**
+### **Requirements:**
+- **Systems:** Windows 10/11 or Windows Server 2019/2022, Linux (Ubuntu or CentOS)
+- **Tools:**
+  - **Windows Event Viewer**
+  - **PowerShell (Pre-installed on Windows)**
+  - **Text Editor (Notepad or nano)**
+  - **Terminal (Linux)**
+
+---
+
+## **Preparation:**
+For this lab, you will need to set up log collection on both Windows and Linux systems. Follow these steps to ensure everything is ready:
+
+### **On Windows:**
+1. Open **Group Policy Editor** (`gpedit.msc`):
+   - Navigate to `Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`.
+   - Ensure that **Module Logging**, **Script Block Logging**, and **Script Execution** are enabled.
+
+2. Open **Event Viewer**:
+   - Go to **Applications and Services Logs → Microsoft → Windows → PowerShell → Operational**.
+
+### **On Linux:**
+1. Logs are usually stored in `/var/log/`. Common logs to review include:
+   - `/var/log/auth.log` for authentication logs.
+   - `/var/log/syslog` for system logs.
+
+2. Use a text editor (`nano` or `vim`) to explore the contents of these logs.
+
 
 ### **Step 1: Simulate a Suspicious PowerShell Command**
 To simulate a suspicious activity, open an elevated PowerShell session and run the following command:
