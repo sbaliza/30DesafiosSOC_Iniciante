@@ -58,12 +58,14 @@ Some common **Event IDs** in **Windows Security Logs** that you will encounter i
    net use \\127.0.0.1\IPC$ /user:haxuser1 WrongPassword
    ```
    Here:
-   | Command Part           | Explanation                                                                                   |
+| Command Part           | Explanation                                                                                   |
 |------------------------|-----------------------------------------------------------------------------------------------|
 | `net use`              | A command used to connect to shared resources (like network shares or printers).              |
 | `\\127.0.0.1\IPC$`     | A special hidden administrative share called `IPC$` on your local machine (127.0.0.1 = localhost). `IPC$` is used for inter-process communication, especially for authentication purposes. |
 | `/user:haxuser1`       | Specifies the username to use for authentication (in this case, `haxuser1`).                 |
 | `WrongPassword`        | The password you're trying to authenticate with — which is intentionally incorrect.           |
+
+Or Else you can sign out with your existing account and sign in with `haxuser1` account with an invalid password
 
 
 
