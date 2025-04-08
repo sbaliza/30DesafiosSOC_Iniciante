@@ -15,16 +15,6 @@ The objective of this lab is to introduce students to **Windows Security Logs** 
 
 ---
 
-## **Preparation:**
-In this lab, you will explore and analyze the **Security Logs** in the **Windows Event Viewer**, which records security events like login attempts, account lockouts, and more. To get started:
-
-### **On Windows:**
-1. Press `Win + R` and type `eventvwr.msc` to open the **Event Viewer**.
-2. In the **Event Viewer**, expand the **Windows Logs** section and click on **Security**.
-3. You will now see various security-related events like **Login attempts**, **Account lockouts**, **Privilege escalations**, etc.
-
----
-
 ## **What are Windows Security Logs?**
 Windows Security Logs contain records of security-related events on the system, such as:
 - **Successful and Failed Login Attempts:** Track users who log in or fail to log in.
