@@ -51,10 +51,25 @@ Some common **Event IDs** in **Windows Security Logs** that you will encounter i
 
 
 ### **Step 1: Simulate a Failed Login Attempt**
-1. Open **Command Prompt** and enter an invalid username and password. You can do this by using the following command:
+1. Create a test user name "haxuser1" on Windows machine.
+2. Simulate a failed account access using this command
+   Open **PowerShell** and enter an invalid username and password. You can do this by using the following command:
    ```cmd
-   net user invaliduser invalidpassword
+   net use \\127.0.0.1\IPC$ /user:haxuser1 WrongPassword
    ```
+   Here:
+   | Command Part           | Explanation                                                                                   |
+|------------------------|-----------------------------------------------------------------------------------------------|
+| `net use`              | A command used to connect to shared resources (like network shares or printers).              |
+| `\\127.0.0.1\IPC$`     | A special hidden administrative share called `IPC$` on your local machine (127.0.0.1 = localhost). `IPC$` is used for inter-process communication, especially for authentication purposes. |
+| `/user:haxuser1`       | Specifies the username to use for authentication (in this case, `haxuser1`).                 |
+| `WrongPassword`        | The password you're trying to authenticate with — which is intentionally incorrect.           |
+
+
+
+### **Step 2: Detect the Log in Windows Event Viewer**
+1. In the **Event Viewer**, navigate to:  
+   `Windows Logs → Security`
 2.  After the failed login, go back to Event Viewer.
 3. Filter the Security Logs for Event ID 4625 (Failed Logon).
 4.. Look for entries that correspond to the failed login attempt.
@@ -63,16 +78,6 @@ Some common **Event IDs** in **Windows Security Logs** that you will encounter i
    - User Name
    - Logon Type
    - Source Network Address
-
-### **Step 2: Detect the Log in Windows Event Viewer**
-1. In the **Event Viewer**, navigate to:  
-   `Windows Logs → Security`
-2. Look for **Event ID 4624** (Successful Logon). This event will show you the successful logins to the system.
-3. Take a screenshot of the event details, including:
-   - User Name
-   - Logon Type
-   - Source Network Address
-   - Logon Time
 
 ## Conclusion:
 - Understanding Windows Security Logs: Windows Security Logs are essential for identifying suspicious behavior such as unauthorized login attempts, privilege escalation, and system configuration changes.
