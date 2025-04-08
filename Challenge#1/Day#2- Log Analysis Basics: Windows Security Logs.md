@@ -58,6 +58,7 @@ Some common **Event IDs** in **Windows Security Logs** that you will encounter i
    net use \\127.0.0.1\IPC$ /user:haxuser1 WrongPassword
    ```
    Here:
+   
 | Command Part           | Explanation                                                                                   |
 |------------------------|-----------------------------------------------------------------------------------------------|
 | `net use`              | A command used to connect to shared resources (like network shares or printers).              |
