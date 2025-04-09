@@ -71,7 +71,7 @@ This log can be used to detect malicious PowerShell usage, such as:
 - LOLBAS (Living Off The Land Binaries) like using Start-Process or Invoke-WebRequest
 - Loading payloads or obfuscated PowerShell commands
 - Persistence via PowerShell commands in startup or tasks
-- 
+
 ## Conclusion:
 - PowerShell Logs: Key to spotting malicious command usage.
 - SOC Analyst Role: Review logs to detect post-exploitation actions.
