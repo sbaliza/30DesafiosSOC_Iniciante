@@ -66,15 +66,16 @@ This command
  - Timestamp of the execution
   
 
-### **Step 3: Analyze Suspicious PowerShell Logs**
-- Hunt for suspicious script executions from unknown sources or non-standard paths.
-- Correlate user activity with system behavior like file downloads or binary execution.
-- Inspect Event ID 4104 for odd commands, encoded scripts, or known attack patterns.
-
+### **Step 3: Why Is This Important for Blue Teams?**
+This log can be used to detect malicious PowerShell usage, such as:
+- LOLBAS (Living Off The Land Binaries) like using Start-Process or Invoke-WebRequest
+- Loading payloads or obfuscated PowerShell commands
+- Persistence via PowerShell commands in startup or tasks
+- 
 ## Conclusion:
 - PowerShell Logs: Key to spotting malicious command usage.
 - SOC Analyst Role: Review logs to detect post-exploitation actions.
 - Threat Detection: Flags abnormal activity for faster response.
 
 ## Submission:
-- Event ID 4104 (PowerShell Script Execution): Submit a screenshot showing a PowerShell script execution event from the logs.
+- Event ID 4103 (PowerShell Script Execution): Submit a screenshot showing a PowerShell script execution event from the logs.
