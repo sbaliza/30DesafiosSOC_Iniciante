@@ -31,6 +31,7 @@ PowerShell logs contain information about PowerShell script executions, includin
 
 ### **Key PowerShell Logs to Monitor:**
 - **Event ID 4104**: Script block logging, capturing the PowerShell commands executed.
+- **Event ID 4103**: Command invocation with parameter binding (detailed command execution).
 - **Event ID 4103**: Transcription logs for all PowerShell sessions.
 - **Event ID 4698**: PowerShell Module Logging for the execution of specific modules.
 - **Event ID 4101**: Execution of PowerShell commands through command-line arguments.
