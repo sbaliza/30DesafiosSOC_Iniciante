@@ -16,14 +16,13 @@ The objective of this lab is to introduce students to **Windows PowerShell Logs*
 ---
 
 ## **Preparation:**
-In this lab, you will explore and analyze **Windows PowerShell Logs** in the **Event Viewer**. These logs record events related to PowerShell execution, such as the running of scripts, command usage, and potential malicious activities.
+Before proceeding, make sure PowerShell script block logging is enabled on your system:
 
-### **On Windows:**
-1. Press `Win + R` and type `eventvwr.msc` to open the **Event Viewer**.
-2. In the **Event Viewer**, expand the **Applications and Services Logs** section and navigate to:
-`Microsoft → Windows → PowerShell → Operational`
-
-3. You should now be able to see logs related to PowerShell activities.
+1. Press `Win + R`, type `gpedit.msc`, and press Enter to open the **Group Policy Editor**.
+2. Navigate to:
+`Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`
+3. Turn on **Module Logging**, **Script Block Logging**, and **Script Execution**.
+4. Apply the settings and close the Group Policy Editor.
 
 ---
 
@@ -40,28 +39,27 @@ PowerShell logs contain information about PowerShell script executions, includin
 
 ## **Lab Task: Explore and Analyze Windows PowerShell Logs**
 
-### **Step 1: Enable PowerShell Script Block Logging**
-Before proceeding, make sure PowerShell script block logging is enabled on your system:
 
-1. Press `Win + R`, type `gpedit.msc`, and press Enter to open the **Group Policy Editor**.
-2. Navigate to:
-`Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`
-3. Turn on **Module Logging**, **Script Block Logging**, and **Script Execution**.
-4. Apply the settings and close the Group Policy Editor.
-
-### **Step 2: Generate PowerShell Logs**
+### **Step 1: Generate PowerShell Logs**
 1. Open **PowerShell** as Administrator.
 2. Run the following PowerShell command to generate a log entry:
 ```powershell
-Get-Process | Where-Object { $_.CPU -gt 10 }
+Start-Process "notepad.exe" -ArgumentList "C:\Windows\System32\drivers\etc\hosts"
 ```
-This command will list the local users on your system, which attackers might use to gather information during post-exploitation.
+This command
+-  Starts a new process using the Start-Process cmdlet.
+-  Specifies "notepad.exe" as the program to launch.
+-  Passes "C:\Windows\System32\drivers\etc\hosts" as an argument to Notepad.
+-  As a result, Notepad opens the hosts file directly.
 
-3. After running the command, go back to Event Viewer and navigate to:
+
+### **Step 2: Visualize the events**
+
+1. After running the command, go back to Event Viewer and navigate to:
 
 `Applications and Services Logs → Microsoft → Windows → PowerShell → Operational`
 
-4. Look for Event ID 4104 in the logs (this will show script block logging for the PowerShell command you executed).
+4. Look for Event ID 4103 in the logs (this will show script block logging for the PowerShell command you executed).
 5. Take a screenshot of the event details, including:
  - PowerShell command that was executed
  - User who ran the command
