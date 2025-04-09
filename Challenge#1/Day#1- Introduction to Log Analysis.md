@@ -6,8 +6,7 @@ The objective of this lab is to introduce students to the basics of **log analys
 ---
 ## **Video Tutorial**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kzEutcdJVMw" frameborder="0" allowfullscreen></iframe>
-
+[Watch the video on YouTube](https://youtu.be/kzEutcdJVMw)
 
 
 ---
