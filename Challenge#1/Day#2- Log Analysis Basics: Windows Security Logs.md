@@ -8,7 +8,7 @@ The objective of this lab is to introduce students to **Windows Security Logs** 
 ---
 ## **▶️Video Tutorial**
 
-[![▶️Watch the video](https://img.youtube.com/vi/kzEutcdJVMw/maxresdefault.jpg)](https://youtu.be/ea7f_M2ExVE)
+[![▶️Watch the video](https://img.youtube.com/vi/ea7f_M2ExVE/maxresdefault.jpg)](https://youtu.be/ea7f_M2ExVE)
 
 ---
 
