@@ -72,6 +72,24 @@ This log can be used to detect malicious PowerShell usage, such as:
 - Loading payloads or obfuscated PowerShell commands
 - Persistence via PowerShell commands in startup or tasks
 
+Example of LOLBAS Tools
+These are legitimate Windows tools that attackers often abuse for stealthy malicious actions.
+
+| 🛠️ Tool             | 📌 Path                                             | 🚩 Abuse Technique                                       |
+|---------------------|-----------------------------------------------------|----------------------------------------------------------|
+| **powershell.exe**  | `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe` | Execute payloads, download malware, bypass AV |
+| **certutil.exe**    | `C:\Windows\System32\certutil.exe`                  | Download files using: `certutil -urlcache -f`            |
+| **mshta.exe**       | `C:\Windows\System32\mshta.exe`                     | Execute malicious HTML apps or remote scripts            |
+| **regsvr32.exe**    | `C:\Windows\System32\regsvr32.exe`                  | Load and execute remote/local DLLs                       |
+| **rundll32.exe**    | `C:\Windows\System32\rundll32.exe`                  | Execute DLLs or scripts to evade detection               |
+| **wmic.exe**        | `C:\Windows\System32\wbem\wmic.exe`                 | Execute commands, gather system info                     |
+| **bitsadmin.exe**   | `C:\Windows\System32\bitsadmin.exe`                 | Download/upload files silently                           |
+| **msbuild.exe**     | `C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe` | Execute malicious C# code in project files  |
+| **installutil.exe** | `C:\Windows\Microsoft.NET\Framework\v4.0.30319\installutil.exe` | Run code during .NET assembly install   |
+| **schtasks.exe**    | `C:\Windows\System32\schtasks.exe`                  | Create scheduled tasks for persistence                   |
+
+> ℹ️ For more: [lolbas-project.github.io](https://lolbas-project.github.io)
+
 ## Conclusion:
 - PowerShell Logs: Key to spotting malicious command usage.
 - SOC Analyst Role: Review logs to detect post-exploitation actions.
