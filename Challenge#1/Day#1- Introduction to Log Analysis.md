@@ -6,16 +6,7 @@ The objective of this lab is to introduce students to the basics of **log analys
 ---
 ## **Video Tutorial**
 
-[![Watch the video](https://img.youtube.com/vi/kzEutcdJVMw/maxresdefault.jpg)](https://youtu.be/kzEutcdJVMw)
-
-<a href="https://youtu.be/kzEutcdJVMw" target="_blank" style="position: relative; display: inline-block; width: 560px;">
-  <img src="https://img.youtube.com/vi/kzEutcdJVMw/maxresdefault.jpg" alt="Watch the video" style="width: 100%;">
-  <img src="https://img.icons8.com/ios-filled/100/ffffff/play--v1.png" 
-       alt="Play" 
-       style="position: absolute; top: 50%; left: 50%; width: 64px; height: 64px; transform: translate(-50%, -50%); opacity: 0.8;">
-</a>
-
-
+[![▶️Watch the video](https://img.youtube.com/vi/kzEutcdJVMw/maxresdefault.jpg)](https://youtu.be/kzEutcdJVMw)
 
 ---
 ## **What is a Log?**
