@@ -16,7 +16,6 @@ The objective of this lab is to simulate a **network-based port scan attack** an
 ### **Tools Needed**
 - `nmap` (on attacker machine)
 - `ufw` or `iptables` (on target machine)
-- `rsyslog` (default logging service)
 
 ### **Log Files**
 - `/var/log/ufw.log` on Ubuntu Server– Captures system and network-related messages
