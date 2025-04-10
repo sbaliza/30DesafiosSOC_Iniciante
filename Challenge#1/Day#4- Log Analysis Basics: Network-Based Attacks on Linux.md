@@ -99,13 +99,9 @@ nmap -p80 TARGET-IP
    sudo tail -f /var/log/ufw.log | grep "Attcker IP"
    ```
 
-Look for patterns such as:
-- Multiple blocked attempts from the same IP address
-- Scans targeting non-standard ports (e.g., 8080, 3306, 21)
-- Frequent hits within a short timeframe (burst activity)
 
 ## ✅ Conclusion
-- Syslog, combined with firewall logs, is powerful for detecting early-stage reconnaissance
+- ufw.log, combined with firewall logs, is powerful for detecting early-stage reconnaissance
 - Port scanning is often the first indicator of an attacker mapping your system
 - Detecting and blocking IPs performing scans is a crucial step in proactive defense
 
