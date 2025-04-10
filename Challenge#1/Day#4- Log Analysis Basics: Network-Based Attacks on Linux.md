@@ -3,7 +3,7 @@
 ---
 
 ## 🎯 **Objective**  
-The objective of this lab is to simulate a **network-based port scan attack** and demonstrate how to detect it using **Syslog** logs on a Linux system. Students will learn how to analyze network-related log entries to identify reconnaissance activity from attackers.
+The objective of this lab is to simulate a **network-based port scan attack** and demonstrate how to detect it using **ufw.log** logs on a Linux system. Students will learn how to launch the HTTP scan prob from Kali Linux(attacker) machine and detect these scan ataempt on Victim machine using UFW.
 
 ---
 
@@ -19,13 +19,7 @@ The objective of this lab is to simulate a **network-based port scan attack** an
 - `rsyslog` (default logging service)
 
 ### **Log Files**
-- `/var/log/syslog` – Captures system and network-related messages
-
----
-
-## 📘 **Preparation**
-
-Network-related events such as blocked connections, failed service access, or unexpected traffic can appear in syslog. When using tools like `ufw` or `iptables`, their logs also integrate with syslog, providing visibility into rejected packets and scan attempts.
+- `/var/log/ufw.log` on Ubuntu Server– Captures system and network-related messages
 
 ---
 
@@ -39,14 +33,35 @@ A **port scan** is a technique used by attackers to probe a system for open port
 
 ---
 
-## 🛡️ **Types of Network Attacks Detectable via Syslog**
-- Port scans (e.g., Nmap, Masscan)
-- Failed service connections
-- Suspicious outbound connections
-- Firewall rule violations
-- Repeated connection attempts on closed ports
+### What is Nmap?
+- Nmap (Network Mapper) is an open-source network scanning tool.
+- Used to discover hosts and services on a network.
+- Helps in identifying open ports, running services, and OS detection.
+- Commonly used for network inventory and vulnerability scanning.
 
 ---
+
+### Nmap Popular Scan Types
+- SYN Scan (-sS): Fast and stealthy port scan.
+- TCP Connect Scan (-sT): Full TCP connection, less stealthy.
+- UDP Scan (-sU): Scans UDP ports for services.
+- Ping Scan (-sn): Checks which hosts are up, no port scan.
+
+### 🔐 What is UFW?
+- UFW stands for Uncomplicated Firewall, a frontend for iptables.
+- Simplifies firewall management for Linux users.
+- Used to allow, deny, and manage traffic rules easily.
+- Logs are stored in `/var/log/ufw.log`.
+
+###🧾 UFW Rule Syntax
+- Basic allow rule: ufw allow <port>
+- Deny a port: ufw deny <port>
+- Allow by service: ufw allow <service> (e.g., ufw allow ssh)
+- Allow by IP: ufw allow from <IP>
+- Allow specific port from IP: ufw allow from <IP> to any port <port>
+- Delete rule: ufw delete allow <port>
+
+
 
 ## 🧪 **Lab Task: Explore and Analyze Linux Syslog for Network Scans**
 
@@ -58,36 +73,32 @@ A **port scan** is a technique used by attackers to probe a system for open port
 
 **On the Attacker Machine:**
 ```bash
-nmap -sS TARGET-IP
+nmap -p80 TARGET-IP
 ```
-Or for more aggressive scan:
-```
-nmap -T4 -A -v TARGET-IP
-```
-On the Target Machine: Enable and configure UFW firewall:
 
-```
-sudo ufw enable
-sudo ufw default deny incoming
-sudo ufw allow ssh
-```
 
 ### 🔍 Step 2: Detection and Analysis – Analyze Syslog
-Check for UFW blocked messages:
 
-```
-sudo grep "UFW BLOCK" /var/log/ufw.log
-```
-Check for connection attempts on closed ports:
+1. Installing UFW firewall
+   ```
+   ufw install
+   ufw enable
+   sudo ufw logging on
+   sudo ufw logging high
+   ```
+2. Create a Firewall rule to drop HTTP traffic from Attack machine
+   ```
+   sudo ufw deny from 69.62.84.69 to any port 80 proto tcp
+   ```
+3. Reload the firewall rules to take effect
+   ```
+   sudo ufw reload
+   ```
+4. Detect the HTTP Scanning traffic
+   ```
+   sudo tail -f /var/log/ufw.log | grep "Attcker IP"
+   ```
 
-```
-sudo grep -i "connection attempt" /var/log/ufw.log
-```
-Optional – Real-time monitoring:
-
-```
-sudo tail -f /var/log/syslog
-```
 Look for patterns such as:
 - Multiple blocked attempts from the same IP address
 - Scans targeting non-standard ports (e.g., 8080, 3306, 21)
