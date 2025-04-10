@@ -76,12 +76,12 @@ sudo ufw allow ssh
 Check for UFW blocked messages:
 
 ```
-sudo grep "UFW BLOCK" /var/log/syslog
+sudo grep "UFW BLOCK" /var/log/ufw.log
 ```
 Check for connection attempts on closed ports:
 
 ```
-sudo grep -i "connection attempt" /var/log/syslog
+sudo grep -i "connection attempt" /var/log/ufw.log
 ```
 Optional – Real-time monitoring:
 
