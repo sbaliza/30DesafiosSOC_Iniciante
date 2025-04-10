@@ -83,8 +83,8 @@ nmap -p80 TARGET-IP
 
 1. Installing UFW firewall
    ```
-   ufw install
-   ufw enable
+   sudo apt install ufw
+   sudo ufw enable
    sudo ufw logging on
    sudo ufw logging high
    ```
