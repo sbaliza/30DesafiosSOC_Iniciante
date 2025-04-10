@@ -51,6 +51,9 @@ A **port scan** is a technique used by attackers to probe a system for open port
 - Simplifies firewall management for Linux users.
 - Used to allow, deny, and manage traffic rules easily.
 - Logs are stored in `/var/log/ufw.log`.
+- Rule file `/etc/ufw/before.rules`
+- To check ufw status `ufw status`
+- To check the rule number `ufw numbered`
 
 ###🧾 UFW Rule Syntax
 - Basic allow rule: ufw allow <port>
