@@ -7,6 +7,11 @@ The objective of this lab is to simulate an **SSH brute force attack** and demon
 
 ---
 
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/6I0s-nh8j6k/maxresdefault.jpg)](https://youtu.be/6I0s-nh8j6k)
+---
+
 ## 🛠️ **Lab Setup**
 
 ### **System Requirements**
