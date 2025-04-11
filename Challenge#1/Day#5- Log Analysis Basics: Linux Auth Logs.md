@@ -52,6 +52,14 @@ A **brute force attack** attempts to guess a user’s SSH password by trying man
 
 ---
 
+## What is Hydra?
+- Hydra is a fast, open-source password-cracking tool used for brute force attacks on logins.
+- It supports 50+ protocols like SSH, FTP, HTTP, SMB, and more.
+- Common use: penetration testing and checking for weak passwords in network services.
+- Syntax: hydra -L users.txt -P passlist.txt <target_ip> <protocol>
+- Use -l/-p for single username/password or -L/-P for files.
+- Add -vV for verbose output and -t 4 to set number of threads.
+
 ## 🧪 **Lab Task: Explore and Analyze Auth Logs for SSH Brute Force**
 
 ---
