@@ -38,24 +38,12 @@ Duration: 15 minutes
 - 🚨 **Threat Hunting:** Detect anomalies like DNS tunneling, beaconing, or unauthorized FTP/SSH usage
 - 🛠️ **Protocol Troubleshooting:** Identify service failures, misconfigurations, or latency issues
 
----
-
-## ✅ **Task Checklist**
-
-| Task | Description |
-|------|-------------|
-| ✅ Install Wireshark | Download and install from the official website |
-| ✅ Capture Live Traffic | Start a capture on your main interface |
-| ✅ Apply Filters | Use filters like `http`, `tcp.port==80`, `ip.addr==192.168.1.1` |
-| ✅ Analyze a PCAP File | Download a malware traffic PCAP and examine sessions |
-| ✅ Identify Suspicious Traffic | Locate large POST requests, unknown IPs, or DNS anomalies |
 
 ---
 
 ## 📸 **Submission**
 Submit screenshots showing:
-- Wireshark interface with live traffic or loaded PCAP
-- Filter applied in the display filter bar
-- One packet expanded with layer-by-layer details
-- Optional: any suspicious IP or payload pattern identified
+- Create a New Profile Name "SOC Analyst" and share the snapshot
+- Create a display filter to capture ICMP traffic and share the snapshot
+- Create a capture filter to capture ICMP traffic and share the snapshot
 
