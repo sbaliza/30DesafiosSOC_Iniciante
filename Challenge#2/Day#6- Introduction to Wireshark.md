@@ -7,6 +7,11 @@ The objective of this lab is to introduce students to **Wireshark**, a powerful 
 
 ---
 
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/WmQZUMaiGfU/maxresdefault.jpg)](https://youtu.be/WmQZUMaiGfU)
+---
+
 ## 🛠️ **Lab Setup**
 
 ### **System Requirements**
