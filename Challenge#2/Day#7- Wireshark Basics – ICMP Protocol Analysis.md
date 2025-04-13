@@ -7,6 +7,11 @@ The objective of this lab is to help students understand and analyze **ICMP (Int
 
 ---
 
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/K_kPVNjv-7w/maxresdefault.jpg)](https://youtu.be/K_kPVNjv-7w)
+---
+
 ## 🛠️ **Lab Setup**
 
 ### **System Requirements**
