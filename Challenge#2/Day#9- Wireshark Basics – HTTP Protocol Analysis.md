@@ -7,6 +7,15 @@ The objective of this lab is to help students analyze **HTTP (Hypertext Transfer
 
 ---
 
+---
+
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/DSp2J4QdpTE/maxresdefault.jpg)](https://youtu.be/DSp2J4QdpTE)
+---
+
+
+
 ## 🛠️ **Lab Setup**
 
 ### **System Requirements**
