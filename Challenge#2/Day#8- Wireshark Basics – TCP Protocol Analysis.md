@@ -7,6 +7,13 @@ The objective of this lab is to introduce students to analyzing **TCP (Transmiss
 
 ---
 
+---
+
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/DSp2J4QdpTE/maxresdefault.jpg)](https://youtu.be/DSp2J4QdpTE)
+---
+
 ## 🛠️ **Lab Setup**
 
 ### **System Requirements**
