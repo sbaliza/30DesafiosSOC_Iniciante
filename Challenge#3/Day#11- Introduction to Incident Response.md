@@ -5,6 +5,13 @@ The objective of this lab is to introduce students to the **core concepts of inc
 
 ---
 
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/aFku6ochX68/maxresdefault.jpg)](https://youtu.be/aFku6ochX68)
+---
+
+
+
 ## **What is Incident Response?**
 
 **Incident Response (IR)** is the structured approach to handle and manage the aftermath of a **security breach or cyberattack**, also known as an incident. It includes steps to:
