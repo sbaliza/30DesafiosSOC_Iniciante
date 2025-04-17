@@ -142,7 +142,7 @@ Caller IP Address: IP of Kali machine
 
 
 
-###🚨 Incident Response Steps
+### 🚨Incident Response Steps
 1. Identify Repeated Failed Logons:
 - Spot Event ID 4625 from same IP
 2. Correlate IP Address:
@@ -161,13 +161,13 @@ New-NetFirewallRule -DisplayName "Block Attacker" -Direction Inbound -RemoteAddr
 6. Report Incident:
 - Create a brief report with findings and actions taken
 
-📩 Submission Requirements
+## 📩Submission Requirements
 Submit the following:
 - Screenshot of Hydra attack in Kali Linux
 - Screenshot of Event Viewer showing multiple 4625 events
 - Firewall rule
 
-✅ Conclusion
+## ✅Conclusion
 This lab demonstrated how to:
 - Simulate an RDP brute-force attack using Hydra
 - Detect suspicious logons via Windows Event Viewer
