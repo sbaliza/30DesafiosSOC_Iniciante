@@ -77,9 +77,9 @@ The NIST Incident Response Lifecycle includes **4 main phases**:
 
 ---
 
-## 🧰 Lab Setup and Requirements
+## 🧰Lab Setup and Requirements
 
-### 🖥️ Machines Required:
+### 🖥️Machines Required:
 - **Windows Server 2019 or 2022**
   - RDP enabled
   - Event Viewer access
@@ -88,13 +88,13 @@ The NIST Incident Response Lifecycle includes **4 main phases**:
   - Hydra pre-installed
   - Connected to same LAN or Virtual Network
 
-### 📶 Network:
+### 📶Network:
 - Ensure **both machines are on the same network**
 - Verify **RDP (TCP/3389)** is open on Windows Server
 
 ---
 
-## ⚙️ Preparation Steps
+## ⚙️Preparation Steps
 
 ### On **Windows Server**:
 1. **Enable RDP**:  
@@ -113,7 +113,7 @@ Filter for Event ID 4625 (Failed Logon)
 
 
 
-### 🎯 Simulate the Attack
+### 🎯Simulate the Attack
 
 1. On Kali Linux:
 Install Hydra (if not installed):
@@ -128,7 +128,7 @@ hydra -t 4 -V -f -l attackerlab -P /usr/share/wordlists/rockyou.txt rdp://<Windo
 ```
 Replace <Windows_Server_IP> with actual IP of Windows Server
 
-### 👁️ Visualize the Alert in Event Viewer
+### 👁️Visualize the Alert in Event Viewer
 1. On Windows Server:
 Open `Event Viewer → Windows Logs → Security`
 
