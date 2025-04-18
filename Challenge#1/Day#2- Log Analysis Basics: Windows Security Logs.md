@@ -87,5 +87,3 @@ Or Else you can sign out with your existing account and sign in with `haxuser1` 
 ## Submission:
 - Event ID 4624 (Successful Login): Submit a screenshot showing a successful login event from the Security logs.
 - Event ID 4625 (Failed Login): Submit a screenshot showing a failed login attempt event from the Security logs.
-- Event ID 4740 (Account Lockout): Submit a screenshot showing an account lockout event from the Security logs.
-
