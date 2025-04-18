@@ -69,8 +69,6 @@ Run the script in the background:
 ## 🧪 Step-by-Step Investigation
 
 ### 1. Preparation
-Ensure auditd, syslog, or basic logging is enabled.
-
 - Install curl, lsof, ps, and grep (usually pre-installed).
 
 ### 2. Detection and Analysis
