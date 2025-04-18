@@ -107,15 +107,14 @@ crontab -e
  - Educate users about unknown script execution.
 
 ## Lab Checklist
-✅ Simulate Script	Create and execute a suspicious bash script
-✅ Investigate Logs	Use commands to analyze the event
-✅ Kill and Delete	Contain and remove the malicious file
-✅ Document Findings	Note IPs, users, and recommendations
+✅ Simulate Script	Create and execute a suspicious bash script    
+✅ Investigate Logs	Use commands to analyze the event    
+✅ Kill and Delete	Contain and remove the malicious file   
+✅ Document Findings	Note IPs, users, and recommendations    
 
 ## 📸 Submission
 Submit screenshots of:
-- The malicious script content
+- The malicious script content    
 - Process list showing the script or curl
-- .bash_history showing the command
 - Script deleted from /tmp
 
