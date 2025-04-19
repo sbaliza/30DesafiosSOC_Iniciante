@@ -7,6 +7,11 @@ The objective of this lab is to investigate and respond to a **malicious cron jo
 
 ---
 
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/3GoMEXOJfPg/maxresdefault.jpg)](https://youtu.be/3GoMEXOJfPg)
+---
+
 ## 📘 **What is a Cron Job?**
 
 A **cron job** is a scheduled task that runs automatically at defined intervals on Unix/Linux systems. Attackers often use cron to **re-execute payloads**, reconnect to command-and-control servers, or maintain access to a compromised system.
