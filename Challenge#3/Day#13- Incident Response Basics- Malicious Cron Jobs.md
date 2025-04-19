@@ -13,6 +13,18 @@ A **cron job** is a scheduled task that runs automatically at defined intervals 
 
 ---
 
+##🧾Format of a crontab entry:
+```
+*  *  *  *  *  command-to-run
+│  │  │  │  │
+│  │  │  │  └─ Day of the week (0-7, Sun = 0 or 7)
+│  │  │  └──── Month (1 - 12)
+│  │  └─────── Day of month (1 - 31)
+│  └────────── Hour (0 - 23)
+└───────────── Minute (0 - 59)
+```
+
+
 ## 🔁 **Incident Response Process (NIST SP 800-61 Rev. 2)**
 
 | **Phase**                         | **Description**                                                                 |
