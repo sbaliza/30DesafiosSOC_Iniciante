@@ -13,7 +13,13 @@ A **cron job** is a scheduled task that runs automatically at defined intervals 
 
 ---
 
+## 🛠️Key Features:
+- Run commands automatically (e.g., every minute, daily, weekly)
+- Useful for backups, updates, monitoring scripts, etc.
+- Works in the background via the cron service
+
 ##🧾Format of a crontab entry:
+
 ```
 *  *  *  *  *  command-to-run
 │  │  │  │  │
