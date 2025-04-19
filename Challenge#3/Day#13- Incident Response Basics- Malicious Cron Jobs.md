@@ -45,7 +45,7 @@ chmod +x /tmp/malicious.sh
 ```
 2. Add a cron job for the current user:
 ```
-(crontab -l; echo "* * * * * /tmp/malicious.sh") | crontab -
+echo "* * * * * /tmp/malicious.sh" >> /var/spool/cron/root
 ```
 
 ## 🧪 Step-by-Step Investigation
