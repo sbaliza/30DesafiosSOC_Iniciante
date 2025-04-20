@@ -30,94 +30,108 @@ A user accidentally ran a PowerShell command that simulates suspicious behavior 
 
 ---
 
-## 🛠️ **Lab Setup**
-
-### **System Requirements:**
-- Windows 10/11 or Server 2019/2022
-- Admin rights or access to Group Policy
-- Event Viewer
-
-### **Enable PowerShell Logging:**
-
-1. Open `gpedit.msc`
-2. Go to:  
-   `Computer Configuration → Administrative Templates → Windows Components → Windows PowerShell`
-3. Enable:
-   - **Turn on Module Logging**
-   - **Turn on Script Block Logging**
-
-Logs will appear here:  
-`Event Viewer → Applications and Services Logs → Microsoft → Windows → PowerShell → Operational`
+## **Lab Setup**
+### **Requirements:**
+- **System:** Windows 10/11 or Windows Server 2019/2022
+- **Tools:**
+  - **Windows Event Viewer** (pre-installed)
+  - **PowerShell (Pre-installed on Windows)**
+  - **Administrative Privileges** (required for enabling logs)
 
 ---
 
-## 🧪 **Step-by-Step Investigation**
+## **Preparation:**
+Before proceeding, make sure PowerShell script block logging is enabled on your system:
 
-### **1. Simulate Suspicious PowerShell Activity**
+1. Press `Win + R`, type `gpedit.msc`, and press Enter to open the **Group Policy Editor**.
+2. Navigate to:
+`Computer Configuration > Administrative Templates > Windows Components > Windows PowerShell`
+3. Turn on **Module Logging**, **Script Block Logging**, and **Script Execution**.
+4. Apply the settings and close the Group Policy Editor.
 
-Open **PowerShell as Administrator** and run:
+---
 
+## **What are Windows PowerShell Logs?**
+PowerShell logs contain information about PowerShell script executions, including details about the commands that were run, the processes that invoked them, and the user who executed them. These logs can be used to detect potential misuse of PowerShell, including post-exploitation techniques often used by attackers.
+
+### **Key PowerShell Logs to Monitor:**
+- **Event ID 4104**: Script block logging, capturing the PowerShell commands executed.
+- **Event ID 4103**: Command invocation with parameter binding (detailed command execution).
+- **Event ID 4698**: PowerShell Module Logging for the execution of specific modules.
+- **Event ID 4101**: Execution of PowerShell commands through command-line arguments.
+
+---
+
+## **Lab Task: Explore and Analyze Windows PowerShell Logs**
+
+
+### **Step 1: Generate PowerShell Logs**
+1. Open **PowerShell** as Administrator.
+2. Run the following PowerShell command to generate a log entry:
 ```powershell
-Invoke-Expression "Write-Output 'Connecting to http://test.com' | Out-File -FilePath $env:TEMP\testlog.txt"
+Start-Process "notepad.exe" -ArgumentList "C:\Windows\System32\drivers\etc\hosts"
 ```
+This command
+-  Starts a new process using the Start-Process cmdlet.
+-  Specifies "notepad.exe" as the program to launch.
+-  Passes "C:\Windows\System32\drivers\etc\hosts" as an argument to Notepad.
+-  As a result, Notepad opens the hosts file directly.
 
-This simulates:
 
-An obfuscated command using Invoke-Expression
+### **Step 2: Visualize the events**
 
-Network-like behavior (Connecting to)
+1. After running the command, go back to Event Viewer and navigate to:
 
-File write to the temp directory
-
-### Step 2. Detect and Analyze the Activity
-- Open Event Viewer
-Navigate to:
 `Applications and Services Logs → Microsoft → Windows → PowerShell → Operational`
 
-- Filter by Event ID 4104 (Script Block Logging)
-Look for the full command executed
+4. Look for Event ID 4103 in the logs (this will show script block logging for the PowerShell command you executed).
+5. Take a screenshot of the event details, including:
+ - PowerShell command that was executed
+ - User who ran the command
+ - Timestamp of the execution
 
-Confirm:
+### **Step 3: Incident Response**
 
-The use of Invoke-Expression
+1. Check the file and it content
 
-The output path: %TEMP%\testlog.txt
+`C:\Windows\System32\drivers\etc\hosts`
 
-The user who ran it
-
-### Step 3. Containment and Eradication
-- Remove the file:
+2. Containment:
+Isolate the system: If you suspect malicious activity, you can block network connections:
+Note: Usually this is doen from EDR tool.
 ```
-Remove-Item "$env:TEMP\testlog.txt"
+New-NetFirewallRule -DisplayName "Block Network Access" -Direction Outbound -Action Block -Enable
 ```
-- Check for additional PowerShell script files:
+3. Eradication:
+Restore the Hosts File: If modifications to the hosts file were made without authorization, restore it from a backup:
+
 ```
-Get-ChildItem -Path C:\Users\ -Filter *.ps1 -Recurse
+Copy-Item "C:\Backup\hosts" -Destination "C:\Windows\System32\drivers\etc\hosts" -Force
 ```
-- Kill PowerShell process if still active (via Task Manager)
+Remove Suspicious Files: If you find any suspicious files related to the incident, you can remove them:
 
-## Step 4. Post-Incident Activity
-- Document the incident:
- - What command was executed?
- - Which user ran it?
- - What was the intent or risk?
+```
+Remove-Item "C:\Path\To\SuspiciousFile.exe" -Force
+```
 
-- Recommendations:
- - Monitor for Invoke-Expression and IEX usage
- - Restrict PowerShell with Constrained Language Mode
- - Route logs to SIEM for alerting on key PowerShell behaviors
+4. Recovery:
+Restore from Backup (if necessary): Restore the system to a clean state from backups:
 
-## Lab Checklist
-Task	Description
-✅ Enable Logging	Ensure PowerShell operational logs are active
-✅ Simulate Suspicious Command	Use Invoke-Expression and write to disk
-✅ Analyze Logs	Investigate the command via Event ID 4104
-✅ Remove File	Delete the generated log file
-✅ Document and Recommend	Create a short report on findings
+```
+Restore-Computer -RestorePoint 1  # Restores to the first available restore point
+```
+Re-enable Network Access: After securing the system, re-enable network access by disabling the firewall rule:
+
+```
+Set-NetFirewallRule -DisplayName "Block Network Access" -Enabled False
+```
+
+5. Reporting
+- Write incident response report with timeline, command etc
 
 ## Submission
 Submit screenshots showing:
-- The PowerShell Operational log with Event ID 4104
-- Highlighted use of Invoke-Expression
-- The test file before deletion (testlog.txt)
-- The command used to remove the file
+✅ Enable Logging	Ensure PowerShell operational logs are active
+✅ Simulate Suspicious Powershell Command
+✅ Analyze Logs	Investigate the command via Event ID 4103
+✅ Remove File	Delete the generated log file
