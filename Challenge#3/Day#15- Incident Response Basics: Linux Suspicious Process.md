@@ -1,4 +1,4 @@
-# **Day#16: Incident Response Basics – Suspicious Network Connection**
+# **Day#15: Incident Response Basics – Suspicious Network Connection**
 
 ---
 
