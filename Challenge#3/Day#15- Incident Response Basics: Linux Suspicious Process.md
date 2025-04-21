@@ -8,6 +8,14 @@ Investigate and respond to a **suspicious outbound network connection** from a L
 
 ---
 
+---
+
+## **▶️Video Tutorial**
+
+[![▶️Watch the video](https://img.youtube.com/vi/Q08CERMd3FI/maxresdefault.jpg)](https://youtu.be/Q08CERMd3FI)
+---
+
+
 ## 📘 **Why It Matters**
 
 Attackers often use hidden outbound connections to communicate with command-and-control (C2) servers. Detecting and cutting off these connections is essential for SOC and IR teams.
