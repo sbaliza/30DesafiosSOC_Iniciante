@@ -99,15 +99,15 @@ rm -f /usr/local/bin/kupdate
 
 ## Lab Checklist
 Task	Description
-✅ Simulate Hidden Process	Create and run a background binary named kupdate
-✅ Detect via ps/top	Use commands to find abnormal processes
-✅ Investigate	Use lsof, netstat, and which
-✅ Kill & Remove	Terminate the process and delete the binary
-✅ Document	Write findings and recommend improvements
+✅ Simulate Hidden Process	Create and run a background binary named kupdate    
+✅ Detect via ps/top	Use commands to find abnormal processes    
+✅ Investigate	Use lsof, netstat, and which    
+✅ Kill & Remove	Terminate the process and delete the binary    
+✅ Document	Write findings and recommend improvements    
 
 ## 📸 Submission
-Submit screenshots showing:
-- Output of ps aux | grep kupdate
-- Binary path and file details
-- kill or pkill output
-- File deletion of /usr/local/bin/kupdate
+Submit screenshots showing:   
+- Output of ps aux | grep kupdate    
+- Binary path and file details    
+- kill or pkill output    
+- File deletion of /usr/local/bin/kupdate    
