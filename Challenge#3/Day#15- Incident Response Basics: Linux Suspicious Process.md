@@ -43,7 +43,7 @@ A Linux system shows an active connection to an unknown IP `45.13.220.98:443`, n
 nohup bash -c 'while true; do curl http://45.13.220.98/ping >/dev/null 2>&1; sleep 30; done' &
 ```
 
-🧪 Step-by-Step Investigation
+🧪Step-by-Step Investigation
 ### Step 1: Detect Active Network Connections
 ```
 netstat -plant
