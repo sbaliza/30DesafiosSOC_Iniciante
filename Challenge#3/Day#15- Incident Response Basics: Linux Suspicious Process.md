@@ -52,6 +52,13 @@ ss -plant
 ```
 Look for a suspicious IP such as 45.13.220.98:443.
 
+Here 
+-p	Show the PID and program name of the connection
+-l	Show only listening sockets
+-a	Show all connections and listening ports
+-n	Show numeric addresses (don’t resolve hostnames or port names)
+-t	Show only TCP connections
+
 ### Step 2: Identify the Responsible Process
 Get the PID from netstat or ss output
 
