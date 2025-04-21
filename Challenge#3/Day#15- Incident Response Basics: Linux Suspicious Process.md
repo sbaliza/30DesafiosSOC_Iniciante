@@ -58,9 +58,7 @@ Get the PID from netstat or ss output
 Investigate:
 
 ```
-ps -p <PID> -o pid,ppid,cmd
-ls -l /proc/<PID>/exe
-lsof -p <PID>
+ps aux | grep 45.13.220.98
 ```
 ### Step 3: Containment & Eradication
 - Kill the process:
