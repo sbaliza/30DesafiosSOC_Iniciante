@@ -1,113 +1,96 @@
-# **Day#15: Incident Response Basics: Linux Suspicious Process**
+# **Day#16: Incident Response Basics – Suspicious Network Connection**
 
 ---
 
-## 🎯 **Objective:**  
-To investigate and respond to a **suspicious background process** running on a Linux machine, simulating malware or a stealthy backdoor. Students will learn how to identify abnormal processes, trace binaries, and take action.
+## 🎯 **Objective**
+
+Investigate and respond to a **suspicious outbound network connection** from a Linux machine. This simulates beaconing behavior or data exfiltration. Students will learn to inspect open connections, trace source processes, and mitigate threats.
 
 ---
 
 ## 📘 **Why It Matters**
 
-Attackers often run malicious binaries in the background and try to hide their process names or use legit-sounding names like `kworker`, `updater`, or `syslogd`. Detecting these is crucial in real-world IR.
+Attackers often use hidden outbound connections to communicate with command-and-control (C2) servers. Detecting and cutting off these connections is essential for SOC and IR teams.
 
 ---
 
 ## 🔁 **Incident Response Process (NIST SP 800-61 Rev. 2)**
 
-| **Phase**                         | **Description**                                                                 |
-|----------------------------------|---------------------------------------------------------------------------------|
-| **1. Preparation**               | Baseline your system’s normal running processes and enable process auditing.     |
-| **2. Detection and Analysis**    | Use tools like `ps`, `lsof`, and `netstat` to identify suspicious processes.     |
-| **3. Containment, Eradication, and Recovery** | Kill the process, investigate its binary, and delete or quarantine it.          |
-| **4. Post-Incident Activity**    | Document behavior, clean up remnants, and build detection rules.                 |
+| **Phase** | **Description** |
+|----------|-----------------|
+| **1. Preparation** | Ensure `netstat`, `ss`, and `lsof` are installed. Enable auditd/network logging. |
+| **2. Detection and Analysis** | Identify unexpected remote connections and associated processes. |
+| **3. Containment, Eradication, and Recovery** | Kill the process, investigate binary, block destination IP. |
+| **4. Post-Incident Activity** | Document findings, improve firewall rules, configure monitoring tools. |
 
 ---
 
-## ⚠️ **Scenario: Unknown Process 'kupdate' Found Running in Background**
+## ⚠️ **Scenario: Unexpected Outbound Connection Detected**
 
-During routine checks, you spot a process named `kupdate` running — but it’s not part of your system’s normal activity.
+A Linux system shows an active connection to an unknown IP `45.13.220.98:443`, not related to any known services.
 
 ---
 
 ## 🛠️ **Lab Setup**
 
-### **System Requirements:**
-- Any Linux system (Ubuntu/Kali recommended)
-- sudo/root access
+### **System Requirements**
+- Ubuntu/Kali Linux system
+- Internet access
+- Tools: `curl`, `netstat` or `ss`, `lsof`
 
-### **Simulate the Suspicious Process:**
-
-1. Create a fake malicious script:
+### **Simulate Suspicious Connection**
 ```bash
-echo -e '#!/bin/bash\nwhile true; do sleep 60; done' > /usr/local/bin/kupdate
-chmod +x /usr/local/bin/kupdate
-```
-2. Run it in the background:
-
-```
-nohup /usr/local/bin/kupdate &
+nohup bash -c 'while true; do curl http://45.13.220.98/ping >/dev/null 2>&1; sleep 30; done' &
 ```
 
-## 🧪 Step-by-Step Investigation
+🧪 Step-by-Step Investigation
+### Step 1: Detect Active Network Connections
+```
+netstat -plant
+# or
+ss -plant
+```
+Look for a suspicious IP such as 45.13.220.98:443.
 
-### Step 1. Detect Unknown Background Process
-```
-ps aux | grep kupdate
-```
-Or use:
+### Step 2: Identify the Responsible Process
+Get the PID from netstat or ss output
+
+Investigate:
 
 ```
-top
-```
-### Step 2. Identify Executable and Open Files
-```
-which kupdate
-ls -l /usr/local/bin/kupdate
+ps -p <PID> -o pid,ppid,cmd
+ls -l /proc/<PID>/exe
 lsof -p <PID>
 ```
-### Step 3. Check If Process Is Making Network Connections
-```
-netstat -plant | grep <PID>
-```
-It shouldn't have any unless it's suspicious
-
-### Step 4. Containment and Eradication
+### Step 3: Containment & Eradication
 - Kill the process:
+
 ```
 kill <PID>
+# or
+pkill curl
 ```
-Or:
+- Block the IP using UFW:
 
 ```
-pkill kupdate
+ufw deny out to 45.13.220.98
 ```
-- Remove the binary:
-```
-rm -f /usr/local/bin/kupdate
-```
-### Step 5. Post-Incident Activity
-- Document:
- - What process was found?
- - Was it scheduled or persistent?
- - What path did it use?
+### Step 4: Post-Incident Activity
+Document:
+- What process initiated the connection?
+- Remote IP and port?
+- Binary path used?
 
-- Recommendations:
- - Monitor for unknown processes using auditd or psad
- - Use allowlists for running binaries
- - Run weekly system baselines
+Recommendations:
+- Implement egress filtering
+- Deploy IDS/IPS solutions
+- Monitor outbound connections and unusual traffic
 
-## Lab Checklist
-Task	Description    
-✅ Simulate Hidden Process	Create and run a background binary named kupdate    
-✅ Detect via ps/top	Use commands to find abnormal processes    
-✅ Investigate	Use lsof, netstat, and which    
-✅ Kill & Remove	Terminate the process and delete the binary    
-✅ Document	Write findings and recommend improvements    
 
-## 📸 Submission
-Submit screenshots showing:   
-- Output of ps aux | grep kupdate    
-- Binary path and file details    
-- kill or pkill output    
-- File deletion of /usr/local/bin/kupdate    
+## 📸Submission
+Submit screenshots showing:
+- Output of netstat or ss with suspicious connection
+- ps and lsof output with PID
+- Process termination (kill or pkill)
+- IP block using UFW or iptables
+- Written summary of incident
