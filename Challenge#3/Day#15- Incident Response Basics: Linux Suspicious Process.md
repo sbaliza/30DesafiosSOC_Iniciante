@@ -98,7 +98,7 @@ rm -f /usr/local/bin/kupdate
  - Run weekly system baselines
 
 ## Lab Checklist
-Task	Description
+Task	Description    
 ✅ Simulate Hidden Process	Create and run a background binary named kupdate    
 ✅ Detect via ps/top	Use commands to find abnormal processes    
 ✅ Investigate	Use lsof, netstat, and which    
