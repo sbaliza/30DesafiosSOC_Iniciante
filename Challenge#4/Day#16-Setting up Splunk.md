@@ -19,7 +19,8 @@ The objective of this task is to help students **install and configure Splunk on
 ### **Step 1: Download Splunk**
 1. Open **Terminal** and download Splunk using `wget`:  
    ```bash
-   wget -O splunk-ubuntu.deb https://download.splunk.com/products/splunk/releases/latest/linux/splunk-latest-linux-2.0-amd64.deb
+  
+wget -O splunk-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.3.0/linux/splunk-9.3.0-51ccf43db5bd-linux-2.6-amd64.deb"
     ```
 2. Once downloaded, install Splunk:
 ```
